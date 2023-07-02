@@ -22,6 +22,7 @@
 		572576172A514C830099BE23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5725761A2A514C830099BE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5725761C2A514C830099BE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		572576232A5151080099BE23 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				572576172A514C830099BE23 /* Assets.xcassets */,
 				572576192A514C830099BE23 /* LaunchScreen.storyboard */,
 				5725761C2A514C830099BE23 /* Info.plist */,
+				572576232A5151080099BE23 /* .swiftlint.yml */,
 			);
 			path = AppStore;
 			sourceTree = "<group>";
@@ -71,6 +73,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5725761F2A514C830099BE23 /* Build configuration list for PBXNativeTarget "AppStore" */;
 			buildPhases = (
+				572576222A5150750099BE23 /* SwiftLint Script */,
 				572576072A514C820099BE23 /* Sources */,
 				572576082A514C820099BE23 /* Frameworks */,
 				572576092A514C820099BE23 /* Resources */,
@@ -128,6 +131,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		572576222A5150750099BE23 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		572576072A514C820099BE23 /* Sources */ = {

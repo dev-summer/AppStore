@@ -1,0 +1,7 @@
+disabled_rules:
+  - force_cast
+  - nesting
+  - trailing_whitespace
+  - comment_spacing
+  - line_length
+  - xctfail_message
