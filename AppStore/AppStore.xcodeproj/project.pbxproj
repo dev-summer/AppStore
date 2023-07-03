@@ -12,7 +12,28 @@
 		572576132A514C820099BE23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576122A514C820099BE23 /* ViewController.swift */; };
 		572576182A514C830099BE23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572576172A514C830099BE23 /* Assets.xcassets */; };
 		5725761B2A514C830099BE23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572576192A514C830099BE23 /* LaunchScreen.storyboard */; };
+		5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576292A5153FC0099BE23 /* HTTPMethod.swift */; };
+		5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725762B2A52843C0099BE23 /* Endpoint.swift */; };
+		5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725762D2A528C1E0099BE23 /* RequestService.swift */; };
+		572576322A5299E50099BE23 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576312A5299E50099BE23 /* NetworkService.swift */; };
+		572576732A52A28B0099BE23 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576722A52A28B0099BE23 /* NetworkServiceTests.swift */; };
+		572576762A52A2C90099BE23 /* NetworkError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */; };
+		5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576792A52A2F50099BE23 /* StubEndpoint.swift */; };
+		5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725767B2A52A3240099BE23 /* MockRequestService.swift */; };
+		572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576822A52ACB10099BE23 /* DataTransferService.swift */; };
+		572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */; };
+		572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5725766A2A52A25E0099BE23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 572576032A514C820099BE23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5725760A2A514C820099BE23;
+			remoteInfo = AppStore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5725760B2A514C820099BE23 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,11 +43,29 @@
 		572576172A514C830099BE23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5725761A2A514C830099BE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5725761C2A514C830099BE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		572576232A5151080099BE23 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		572576292A5153FC0099BE23 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5725762B2A52843C0099BE23 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5725762D2A528C1E0099BE23 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		572576312A5299E50099BE23 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		572576662A52A25E0099BE23 /* AppStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		572576722A52A28B0099BE23 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Equatable.swift"; sourceTree = "<group>"; };
+		572576792A52A2F50099BE23 /* StubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubEndpoint.swift; sourceTree = "<group>"; };
+		5725767B2A52A3240099BE23 /* MockRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestService.swift; sourceTree = "<group>"; };
+		572576822A52ACB10099BE23 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferError+Equatable.swift"; sourceTree = "<group>"; };
+		572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		572576082A514C820099BE23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572576632A52A25E0099BE23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				5725760D2A514C820099BE23 /* AppStore */,
+				572576672A52A25E0099BE23 /* AppStoreTests */,
 				5725760C2A514C820099BE23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5725760B2A514C820099BE23 /* AppStore.app */,
+				572576662A52A25E0099BE23 /* AppStoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,15 +96,96 @@
 		5725760D2A514C820099BE23 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				572576272A51537C0099BE23 /* Data */,
 				5725760E2A514C820099BE23 /* AppDelegate.swift */,
 				572576102A514C820099BE23 /* SceneDelegate.swift */,
 				572576122A514C820099BE23 /* ViewController.swift */,
 				572576172A514C830099BE23 /* Assets.xcassets */,
 				572576192A514C830099BE23 /* LaunchScreen.storyboard */,
 				5725761C2A514C830099BE23 /* Info.plist */,
-				572576232A5151080099BE23 /* .swiftlint.yml */,
 			);
 			path = AppStore;
+			sourceTree = "<group>";
+		};
+		572576272A51537C0099BE23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				572576282A51537F0099BE23 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		572576282A51537F0099BE23 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
+				5725762B2A52843C0099BE23 /* Endpoint.swift */,
+				5725762D2A528C1E0099BE23 /* RequestService.swift */,
+				572576312A5299E50099BE23 /* NetworkService.swift */,
+				572576822A52ACB10099BE23 /* DataTransferService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		572576672A52A25E0099BE23 /* AppStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				572576742A52A2B90099BE23 /* Extension */,
+				572576702A52A27C0099BE23 /* Data */,
+				5725766F2A52A2620099BE23 /* TestDouble */,
+			);
+			path = AppStoreTests;
+			sourceTree = "<group>";
+		};
+		5725766F2A52A2620099BE23 /* TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				572576782A52A2EE0099BE23 /* Mock */,
+				572576772A52A2EA0099BE23 /* Stub */,
+			);
+			path = TestDouble;
+			sourceTree = "<group>";
+		};
+		572576702A52A27C0099BE23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				572576712A52A27F0099BE23 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		572576712A52A27F0099BE23 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				572576722A52A28B0099BE23 /* NetworkServiceTests.swift */,
+				572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		572576742A52A2B90099BE23 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */,
+				572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		572576772A52A2EA0099BE23 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				572576792A52A2F50099BE23 /* StubEndpoint.swift */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		572576782A52A2EE0099BE23 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5725767B2A52A3240099BE23 /* MockRequestService.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +209,24 @@
 			productReference = 5725760B2A514C820099BE23 /* AppStore.app */;
 			productType = "com.apple.product-type.application";
 		};
+		572576652A52A25E0099BE23 /* AppStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5725766C2A52A25E0099BE23 /* Build configuration list for PBXNativeTarget "AppStoreTests" */;
+			buildPhases = (
+				572576622A52A25E0099BE23 /* Sources */,
+				572576632A52A25E0099BE23 /* Frameworks */,
+				572576642A52A25E0099BE23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5725766B2A52A25E0099BE23 /* PBXTargetDependency */,
+			);
+			name = AppStoreTests;
+			productName = AppStoreTests;
+			productReference = 572576662A52A25E0099BE23 /* AppStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +239,10 @@
 				TargetAttributes = {
 					5725760A2A514C820099BE23 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					572576652A52A25E0099BE23 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5725760A2A514C820099BE23;
 					};
 				};
 			};
@@ -116,6 +260,7 @@
 			projectRoot = "";
 			targets = (
 				5725760A2A514C820099BE23 /* AppStore */,
+				572576652A52A25E0099BE23 /* AppStoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +272,13 @@
 			files = (
 				5725761B2A514C830099BE23 /* LaunchScreen.storyboard in Resources */,
 				572576182A514C830099BE23 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572576642A52A25E0099BE23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,13 +311,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
+				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
+				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
+				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572576622A52A25E0099BE23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */,
+				572576732A52A28B0099BE23 /* NetworkServiceTests.swift in Sources */,
+				572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */,
+				5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */,
+				572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */,
+				572576762A52A2C90099BE23 /* NetworkError+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5725766B2A52A25E0099BE23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5725760A2A514C820099BE23 /* AppStore */;
+			targetProxy = 5725766A2A52A25E0099BE23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		572576192A514C830099BE23 /* LaunchScreen.storyboard */ = {
@@ -347,6 +525,50 @@
 			};
 			name = Release;
 		};
+		5725766D2A52A25E0099BE23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Q4UQ436SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = summercat.AppStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppStore";
+			};
+			name = Debug;
+		};
+		5725766E2A52A25E0099BE23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Q4UQ436SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = summercat.AppStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppStore";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -364,6 +586,15 @@
 			buildConfigurations = (
 				572576202A514C830099BE23 /* Debug */,
 				572576212A514C830099BE23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5725766C2A52A25E0099BE23 /* Build configuration list for PBXNativeTarget "AppStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5725766D2A52A25E0099BE23 /* Debug */,
+				5725766E2A52A25E0099BE23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
