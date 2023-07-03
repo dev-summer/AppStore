@@ -26,3 +26,18 @@ final class StubEndpointWithDecodableResponseType: Endpoint {
         self.path = path
     }
 }
+
+final class StubEndpointWithDataResponseType: Endpoint {
+    typealias Response = Data
+    
+    var httpMethod: HTTPMethod
+    var baseURL: URL?
+    var path: String
+    var parameters: [String: String] = [:]
+    
+    init(httpMethod: HTTPMethod, baseURL: URL?, path: String) {
+        self.httpMethod = httpMethod
+        self.baseURL = baseURL
+        self.path = path
+    }
+}

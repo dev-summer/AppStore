@@ -21,6 +21,8 @@
 		5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576792A52A2F50099BE23 /* StubEndpoint.swift */; };
 		5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725767B2A52A3240099BE23 /* MockRequestService.swift */; };
 		572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576822A52ACB10099BE23 /* DataTransferService.swift */; };
+		572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */; };
+		572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		572576792A52A2F50099BE23 /* StubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubEndpoint.swift; sourceTree = "<group>"; };
 		5725767B2A52A3240099BE23 /* MockRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestService.swift; sourceTree = "<group>"; };
 		572576822A52ACB10099BE23 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferError+Equatable.swift"; sourceTree = "<group>"; };
+		572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				572576722A52A28B0099BE23 /* NetworkServiceTests.swift */,
+				572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */,
+				572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 			files = (
 				5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */,
 				572576732A52A28B0099BE23 /* NetworkServiceTests.swift in Sources */,
+				572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */,
 				5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */,
+				572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */,
 				572576762A52A2C90099BE23 /* NetworkError+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
