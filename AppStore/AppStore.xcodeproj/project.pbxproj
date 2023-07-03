@@ -34,6 +34,7 @@
 		572576B22A52D44B0099BE23 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B12A52D44B0099BE23 /* App.swift */; };
 		572576B42A52D4840099BE23 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B32A52D4840099BE23 /* AppRepository.swift */; };
 		572576B62A52D5170099BE23 /* AppsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B52A52D5170099BE23 /* AppsPage.swift */; };
+		572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		572576B12A52D44B0099BE23 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		572576B32A52D4840099BE23 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		572576B52A52D5170099BE23 /* AppsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPage.swift; sourceTree = "<group>"; };
+		572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		572576272A51537C0099BE23 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				572576BA2A52DBC60099BE23 /* Repository */,
 				5725769C2A52CDEB0099BE23 /* CacheStorage */,
 				572576282A51537F0099BE23 /* Network */,
 			);
@@ -285,6 +288,14 @@
 			path = RepositoryInterface;
 			sourceTree = "<group>";
 		};
+		572576BA2A52DBC60099BE23 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +432,7 @@
 				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
 				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
+				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
 				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
