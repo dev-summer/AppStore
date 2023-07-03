@@ -22,6 +22,7 @@ final class MockFailureDataTransferService: DataTransferService {
         completion: @escaping (Result<T, DataTransferError>) -> Void
     ) -> URLSessionTask? where T == E.Response {
         requestCallCount += 1
+        completion(.failure(error))
         
         return nil
     }

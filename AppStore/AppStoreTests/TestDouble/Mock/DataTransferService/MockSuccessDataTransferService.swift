@@ -12,9 +12,11 @@ final class MockSuccessDataTransferService: DataTransferService {
     private var requestCallCount: Int = .zero
     private var requestJSONCallCount: Int = .zero
     private var responseDTO: ResponseDTO?
+    private var data: Data?
     
-    init(responseDTO: ResponseDTO? = nil) {
+    init(responseDTO: ResponseDTO? = nil, data: Data? = nil) {
         self.responseDTO = responseDTO
+        self.data = data
     }
     
     func request<E: Endpoint, T: Decodable>(
@@ -22,6 +24,7 @@ final class MockSuccessDataTransferService: DataTransferService {
         completion: @escaping (Result<T, DataTransferError>) -> Void
     ) -> URLSessionTask? where T == E.Response {
         requestCallCount += 1
+        completion(.success(data as! T))
         
         return nil
     }

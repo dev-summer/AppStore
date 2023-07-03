@@ -45,6 +45,7 @@
 		57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */; };
 		57788BF12A5326E20031C5F2 /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */; };
 		57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */; };
+		57788BF72A5328FE0031C5F2 /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF62A5328FE0031C5F2 /* ImageRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIEndpoint.swift; sourceTree = "<group>"; };
+		57788BF62A5328FE0031C5F2 /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				57788BDB2A52EE080031C5F2 /* AppRepositoryTests.swift */,
+				57788BF62A5328FE0031C5F2 /* ImageRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */,
 				57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */,
 				57788BDC2A52EE080031C5F2 /* AppRepositoryTests.swift in Sources */,
+				57788BF72A5328FE0031C5F2 /* ImageRepositoryTests.swift in Sources */,
 				572576732A52A28B0099BE23 /* NetworkServiceTests.swift in Sources */,
 				572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */,
 				57788BE02A52F1340031C5F2 /* MockSuccessNetworkService.swift in Sources */,
