@@ -42,6 +42,7 @@
 		57788BE82A531EC80031C5F2 /* AppsPage+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BE72A531EC80031C5F2 /* AppsPage+Equatable.swift */; };
 		57788BEB2A53247B0031C5F2 /* MockSuccessDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */; };
 		57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */; };
+		57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		57788BE72A531EC80031C5F2 /* AppsPage+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsPage+Equatable.swift"; sourceTree = "<group>"; };
 		57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessDataTransferService.swift; sourceTree = "<group>"; };
 		57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureDataTransferService.swift; sourceTree = "<group>"; };
+		57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				572576B32A52D4840099BE23 /* AppRepository.swift */,
+				57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */,
 			);
 			path = RepositoryInterface;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */,
 				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
