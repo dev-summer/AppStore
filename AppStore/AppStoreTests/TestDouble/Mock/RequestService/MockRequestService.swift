@@ -13,7 +13,7 @@ final class MockRequestService: RequestService {
     let response: HTTPURLResponse?
     let error: Error?
     private var request: URLRequest?
-    private var callCount: Int = 0
+    private var callCount: Int = .zero
     
     init(data: Data?, response: HTTPURLResponse?, error: Error?) {
         self.data = data

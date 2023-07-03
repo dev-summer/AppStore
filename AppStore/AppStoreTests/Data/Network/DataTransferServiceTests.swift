@@ -17,7 +17,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let data = #"{"value": "Hello"}"#.data(using: .utf8)!
@@ -33,7 +33,7 @@ final class DataTransferServiceTests: XCTestCase {
             switch result {
             case .success(let data):
                 XCTAssertEqual(data.value, "Hello")
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             case .failure:
                 XCTFail()
@@ -49,7 +49,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let data = #"{"invalidResponse": "Hello"}"#.data(using: .utf8)!
@@ -67,7 +67,7 @@ final class DataTransferServiceTests: XCTestCase {
                 XCTFail()
             case .failure(let error):
                 XCTAssertEqual(error, .decodingFailure)
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             }
         }
@@ -81,7 +81,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let networkService = MockFailureNetworkService(request: request, error: .invalidResponse)
@@ -95,7 +95,7 @@ final class DataTransferServiceTests: XCTestCase {
                 XCTFail()
             case .failure(let error):
                 XCTAssertEqual(error, .networkFailure(.invalidResponse))
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             }
         }
@@ -109,7 +109,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDataResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let data = #"{"value": "Hello"}"#.data(using: .utf8)!
@@ -125,7 +125,7 @@ final class DataTransferServiceTests: XCTestCase {
             switch result {
             case .success(let data):
                 XCTAssertEqual(data, data)
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             case .failure:
                 XCTFail()
@@ -141,7 +141,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let data = #"{"value": "Hello"}"#.data(using: .utf8)!
@@ -159,7 +159,7 @@ final class DataTransferServiceTests: XCTestCase {
                 XCTFail()
             case .failure(let error):
                 XCTAssertEqual(error, .decodingFailure)
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             }
         })
@@ -173,7 +173,7 @@ final class DataTransferServiceTests: XCTestCase {
         let endpoint = StubEndpointWithDataResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
-            path: .init()
+            path: String.init()
         )
         let request = endpoint.urlRequest
         let networkService = MockFailureNetworkService(request: request, error: .invalidResponse)
@@ -187,55 +187,11 @@ final class DataTransferServiceTests: XCTestCase {
                 XCTFail()
             case .failure(let error):
                 XCTAssertEqual(error, .networkFailure(.invalidResponse))
-                networkService.verify(callCount: 1)
+                networkService.verify()
                 expectation.fulfill()
             }
         }
         
         wait(for: [expectation], timeout: 1)
-    }
-}
-
-final class MockSuccessNetworkService: NetworkService {
-    private var callCount: Int = 0
-    private var request: URLRequest?
-    private var data: Data
-    
-    init(request: URLRequest?, data: Data) {
-        self.request = request
-        self.data = data
-    }
-    
-    func request(_ request: URLRequest?, completion: @escaping (Result<Data, NetworkError>) -> Void) -> URLSessionTask? {
-        callCount += 1
-        completion(.success(data))
-        
-        return nil
-    }
-    
-    func verify(callCount: Int = 0) {
-        XCTAssertEqual(self.callCount, callCount)
-    }
-}
-
-final class MockFailureNetworkService: NetworkService {
-    private var callCount: Int = 0
-    private var request: URLRequest?
-    private var error: NetworkError
-    
-    init(request: URLRequest?, error: NetworkError) {
-        self.request = request
-        self.error = error
-    }
-    
-    func request(_ request: URLRequest?, completion: @escaping (Result<Data, NetworkError>) -> Void) -> URLSessionTask? {
-        callCount += 1
-        completion(.failure(error))
-        
-        return nil
-    }
-    
-    func verify(callCount: Int = 0) {
-        XCTAssertEqual(self.callCount, callCount)
     }
 }
