@@ -43,6 +43,7 @@
 		57788BEB2A53247B0031C5F2 /* MockSuccessDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */; };
 		57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */; };
 		57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */; };
+		57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessDataTransferService.swift; sourceTree = "<group>"; };
 		57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureDataTransferService.swift; sourceTree = "<group>"; };
 		57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */,
+				57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */,
 				572576912A52C71C0099BE23 /* LookUpEndpoint.swift */,
 				572576982A52C8800099BE23 /* SearchEndpoint.swift */,
 			);
@@ -487,6 +490,7 @@
 				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
 				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
+				57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */,
 				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
 				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
