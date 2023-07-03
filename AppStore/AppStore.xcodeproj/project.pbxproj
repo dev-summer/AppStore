@@ -118,11 +118,7 @@
 		572576282A51537F0099BE23 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
-				5725762B2A52843C0099BE23 /* Endpoint.swift */,
-				5725762D2A528C1E0099BE23 /* RequestService.swift */,
-				572576312A5299E50099BE23 /* NetworkService.swift */,
-				572576822A52ACB10099BE23 /* DataTransferService.swift */,
+				5725768B2A52C5E90099BE23 /* Infrastructure */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -186,6 +182,18 @@
 				5725767B2A52A3240099BE23 /* MockRequestService.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		5725768B2A52C5E90099BE23 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
+				5725762B2A52843C0099BE23 /* Endpoint.swift */,
+				5725762D2A528C1E0099BE23 /* RequestService.swift */,
+				572576312A5299E50099BE23 /* NetworkService.swift */,
+				572576822A52ACB10099BE23 /* DataTransferService.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
