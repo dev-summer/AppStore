@@ -43,6 +43,7 @@
 		57788BEB2A53247B0031C5F2 /* MockSuccessDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */; };
 		57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */; };
 		57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */; };
+		57788BF12A5326E20031C5F2 /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */; };
 		57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessDataTransferService.swift; sourceTree = "<group>"; };
 		57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureDataTransferService.swift; sourceTree = "<group>"; };
 		57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */,
+				57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
 				57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */,
 				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
+				57788BF12A5326E20031C5F2 /* DefaultImageRepository.swift in Sources */,
 				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
