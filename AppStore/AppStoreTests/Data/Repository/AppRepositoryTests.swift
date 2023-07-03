@@ -117,9 +117,9 @@ final class AppRepositoryTests: XCTestCase {
     func test_retrieveAppListFromCacheSuccess() {
         // given
         let expectation = XCTestExpectation(description: "success")
-        let dataTransferService: MockSuccessDataTransferService = MockSuccessDataTransferService()
         let searchRequestDTO: SearchRequestDTO = SearchRequestDTO(term: "test", offset: Int.zero, limit: 1)
         let responseDTO: ResponseDTO = ResponseDTO(resultCount: 1, results: [appResponse])
+        let dataTransferService: MockSuccessDataTransferService = MockSuccessDataTransferService()
         let cache: CacheStorage<ResponseDTO> = CacheStorage<ResponseDTO>()
         cache.store(responseDTO, for: searchRequestDTO)
         sut = DefaultAppRepository(
@@ -186,8 +186,8 @@ final class AppRepositoryTests: XCTestCase {
     func test_retrieveAppListFromNetworkFailure() {
         // given
         let expectation = XCTestExpectation(description: "failure")
-        let dataTransferService: MockFailureDataTransferService =  MockFailureDataTransferService(error: .decodingFailure)
         let searchRequestDTO: SearchRequestDTO = SearchRequestDTO(term: "test", offset: Int.zero, limit: 1)
+        let dataTransferService: MockFailureDataTransferService =  MockFailureDataTransferService(error: .decodingFailure)
         let cache: CacheStorage<ResponseDTO> = CacheStorage<ResponseDTO>()
         sut = DefaultAppRepository(
             dataTransferService: dataTransferService,
