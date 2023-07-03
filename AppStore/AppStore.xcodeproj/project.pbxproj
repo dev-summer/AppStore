@@ -13,6 +13,7 @@
 		572576182A514C830099BE23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572576172A514C830099BE23 /* Assets.xcassets */; };
 		5725761B2A514C830099BE23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572576192A514C830099BE23 /* LaunchScreen.storyboard */; };
 		5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576292A5153FC0099BE23 /* HTTPMethod.swift */; };
+		5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725762B2A52843C0099BE23 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5725761C2A514C830099BE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		572576232A5151080099BE23 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		572576292A5153FC0099BE23 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5725762B2A52843C0099BE23 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
+				5725762B2A52843C0099BE23 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
