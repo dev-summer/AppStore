@@ -35,8 +35,13 @@
 		572576B42A52D4840099BE23 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B32A52D4840099BE23 /* AppRepository.swift */; };
 		572576B62A52D5170099BE23 /* AppsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B52A52D5170099BE23 /* AppsPage.swift */; };
 		572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */; };
+		57788BDC2A52EE080031C5F2 /* AppRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BDB2A52EE080031C5F2 /* AppRepositoryTests.swift */; };
 		57788BDE2A52F10D0031C5F2 /* MockFailureNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BDD2A52F10D0031C5F2 /* MockFailureNetworkService.swift */; };
 		57788BE02A52F1340031C5F2 /* MockSuccessNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BDF2A52F1340031C5F2 /* MockSuccessNetworkService.swift */; };
+		57788BE42A52F5CC0031C5F2 /* App+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BE32A52F5CC0031C5F2 /* App+Equatable.swift */; };
+		57788BE82A531EC80031C5F2 /* AppsPage+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BE72A531EC80031C5F2 /* AppsPage+Equatable.swift */; };
+		57788BEB2A53247B0031C5F2 /* MockSuccessDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */; };
+		57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,8 +86,13 @@
 		572576B32A52D4840099BE23 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		572576B52A52D5170099BE23 /* AppsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPage.swift; sourceTree = "<group>"; };
 		572576BB2A52DC0A0099BE23 /* DefaultAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppRepository.swift; sourceTree = "<group>"; };
+		57788BDB2A52EE080031C5F2 /* AppRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryTests.swift; sourceTree = "<group>"; };
 		57788BDD2A52F10D0031C5F2 /* MockFailureNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureNetworkService.swift; sourceTree = "<group>"; };
 		57788BDF2A52F1340031C5F2 /* MockSuccessNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessNetworkService.swift; sourceTree = "<group>"; };
+		57788BE32A52F5CC0031C5F2 /* App+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Equatable.swift"; sourceTree = "<group>"; };
+		57788BE72A531EC80031C5F2 /* AppsPage+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsPage+Equatable.swift"; sourceTree = "<group>"; };
+		57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessDataTransferService.swift; sourceTree = "<group>"; };
+		57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureDataTransferService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +210,8 @@
 			children = (
 				572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */,
 				572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */,
+				57788BE32A52F5CC0031C5F2 /* App+Equatable.swift */,
+				57788BE72A531EC80031C5F2 /* AppsPage+Equatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -215,6 +227,7 @@
 		572576782A52A2EE0099BE23 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				57788BE92A53246E0031C5F2 /* DataTransferService */,
 				57788BE22A52F2FD0031C5F2 /* NetworkService */,
 				57788BE12A52F2F60031C5F2 /* RequestService */,
 			);
@@ -302,6 +315,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		57788BDA2A52EDF30031C5F2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				57788BDB2A52EE080031C5F2 /* AppRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		57788BE12A52F2F60031C5F2 /* RequestService */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +338,15 @@
 				57788BDD2A52F10D0031C5F2 /* MockFailureNetworkService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		57788BE92A53246E0031C5F2 /* DataTransferService */ = {
+			isa = PBXGroup;
+			children = (
+				57788BEA2A53247B0031C5F2 /* MockSuccessDataTransferService.swift */,
+				57788BEC2A53249B0031C5F2 /* MockFailureDataTransferService.swift */,
+			);
+			path = DataTransferService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,12 +500,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */,
+				57788BED2A53249B0031C5F2 /* MockFailureDataTransferService.swift in Sources */,
+				57788BDC2A52EE080031C5F2 /* AppRepositoryTests.swift in Sources */,
 				572576732A52A28B0099BE23 /* NetworkServiceTests.swift in Sources */,
 				572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */,
 				57788BE02A52F1340031C5F2 /* MockSuccessNetworkService.swift in Sources */,
 				5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */,
+				57788BE42A52F5CC0031C5F2 /* App+Equatable.swift in Sources */,
 				572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */,
+				57788BE82A531EC80031C5F2 /* AppsPage+Equatable.swift in Sources */,
 				572576762A52A2C90099BE23 /* NetworkError+Equatable.swift in Sources */,
+				57788BEB2A53247B0031C5F2 /* MockSuccessDataTransferService.swift in Sources */,
 				57788BDE2A52F10D0031C5F2 /* MockFailureNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
