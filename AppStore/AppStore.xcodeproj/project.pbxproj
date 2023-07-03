@@ -26,6 +26,7 @@
 		572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */; };
 		572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576912A52C71C0099BE23 /* LookUpEndpoint.swift */; };
 		572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576942A52C7540099BE23 /* ResponseDTO.swift */; };
+		572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576982A52C8800099BE23 /* SearchEndpoint.swift */; };
 		5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreAPIEndpoint.swift; sourceTree = "<group>"; };
 		572576912A52C71C0099BE23 /* LookUpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpEndpoint.swift; sourceTree = "<group>"; };
 		572576942A52C7540099BE23 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		572576982A52C8800099BE23 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 			children = (
 				5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */,
 				572576912A52C71C0099BE23 /* LookUpEndpoint.swift */,
+				572576982A52C8800099BE23 /* SearchEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
+				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
 				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
 				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
 				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
