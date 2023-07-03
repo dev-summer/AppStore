@@ -53,3 +53,39 @@ struct AppResponse: Decodable {
         case minimumOSVersion = "minimumOsVersion"
     }
 }
+
+// MARK: - Mapping to Domain
+
+extension ResponseDTO {
+    func toAppsPage() -> AppsPage {
+        return AppsPage(
+            count: resultCount,
+            searchResults: results.compactMap { $0.toApp() }
+        )
+    }
+}
+
+extension AppResponse {
+    func toApp() -> App {
+        return App(
+            appID: self.appID,
+            appName: self.appName,
+            price: self.price,
+            formattedPrice: self.formattedPrice,
+            categoryName: self.categoryName,
+            appIconURL: self.appIconURL,
+            averageUserRating: self.averageUserRating,
+            userRatingCount: self.userRatingCount,
+            screenshotURLs: self.screenshotURLs,
+            contentAdvisoryRating: self.contentAdvisoryRating,
+            languageCodesISO2A: self.languageCodesISO2A,
+            fileSizeBytes: self.fileSizeBytes,
+            description: self.description,
+            releaseNotes: self.releaseNotes,
+            version: self.version,
+            categories: self.categories,
+            providerName: self.providerName,
+            minimumOSVersion: self.minimumOSVersion
+        )
+    }
+}
