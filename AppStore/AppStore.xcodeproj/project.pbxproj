@@ -28,6 +28,7 @@
 		572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576942A52C7540099BE23 /* ResponseDTO.swift */; };
 		572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576982A52C8800099BE23 /* SearchEndpoint.swift */; };
 		5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */; };
+		5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769D2A52CDF30099BE23 /* CacheStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		572576942A52C7540099BE23 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 		572576982A52C8800099BE23 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestDTO.swift; sourceTree = "<group>"; };
+		5725769D2A52CDF30099BE23 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		572576272A51537C0099BE23 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5725769C2A52CDEB0099BE23 /* CacheStorage */,
 				572576282A51537F0099BE23 /* Network */,
 			);
 			path = Data;
@@ -217,6 +220,14 @@
 				572576982A52C8800099BE23 /* SearchEndpoint.swift */,
 			);
 			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		5725769C2A52CDEB0099BE23 /* CacheStorage */ = {
+			isa = PBXGroup;
+			children = (
+				5725769D2A52CDF30099BE23 /* CacheStorage.swift */,
+			);
+			path = CacheStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
