@@ -14,7 +14,7 @@ final class NetworkServiceTests: XCTestCase {
     func test_requestSuccess() {
         // given
         let expectation = XCTestExpectation(description: "success")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
             path: "success"
@@ -51,9 +51,9 @@ final class NetworkServiceTests: XCTestCase {
     func test_requestFailure_invalidURL() {
         // given
         let expectation = XCTestExpectation(description: "failure: invalid URL")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
-            baseURL: URL(string: ""),
+            baseURL: URL(string: .init()),
             path: "fail"
         )
         let request = endpoint.urlRequest
@@ -77,7 +77,7 @@ final class NetworkServiceTests: XCTestCase {
     func test_requestFailure_invalidRequest() {
         // given
         let expectation = XCTestExpectation(description: "failure: request error")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "test"),
             path: "fail"
@@ -115,7 +115,7 @@ final class NetworkServiceTests: XCTestCase {
     func test_invalidResponse() {
         // given
         let expectation = XCTestExpectation(description: "failure: invalid response")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "test"),
             path: "fail"
@@ -147,7 +147,7 @@ final class NetworkServiceTests: XCTestCase {
     func test_invalidStatusCode() {
         // given
         let expectation = XCTestExpectation(description: "failure: invalid HTTP status code")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "test"),
             path: "fail"
@@ -186,7 +186,7 @@ final class NetworkServiceTests: XCTestCase {
     func test_invalidData() {
         // given
         let expectation = XCTestExpectation(description: "failure: invalid data")
-        let endpoint = StubEndpoint(
+        let endpoint = StubEndpointWithDecodableResponseType(
             httpMethod: .get,
             baseURL: URL(string: "test"),
             path: "fail"

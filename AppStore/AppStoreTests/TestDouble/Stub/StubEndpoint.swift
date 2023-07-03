@@ -9,10 +9,10 @@
 import Foundation
 
 struct DummyModel: Decodable {
-    let name: String
+    let value: String
 }
 
-final class StubEndpoint: Endpoint {
+final class StubEndpointWithDecodableResponseType: Endpoint {
     typealias Response = DummyModel
     
     var httpMethod: HTTPMethod
