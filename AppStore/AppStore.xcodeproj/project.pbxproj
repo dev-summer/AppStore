@@ -23,6 +23,12 @@
 		572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576822A52ACB10099BE23 /* DataTransferService.swift */; };
 		572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */; };
 		572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */; };
+		572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */; };
+		572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576912A52C71C0099BE23 /* LookUpEndpoint.swift */; };
+		572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576942A52C7540099BE23 /* ResponseDTO.swift */; };
+		572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576982A52C8800099BE23 /* SearchEndpoint.swift */; };
+		5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */; };
+		5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769D2A52CDF30099BE23 /* CacheStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		572576822A52ACB10099BE23 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferError+Equatable.swift"; sourceTree = "<group>"; };
 		572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
+		5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreAPIEndpoint.swift; sourceTree = "<group>"; };
+		572576912A52C71C0099BE23 /* LookUpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpEndpoint.swift; sourceTree = "<group>"; };
+		572576942A52C7540099BE23 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		572576982A52C8800099BE23 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
+		5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestDTO.swift; sourceTree = "<group>"; };
+		5725769D2A52CDF30099BE23 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 		572576272A51537C0099BE23 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5725769C2A52CDEB0099BE23 /* CacheStorage */,
 				572576282A51537F0099BE23 /* Network */,
 			);
 			path = Data;
@@ -118,11 +131,10 @@
 		572576282A51537F0099BE23 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
-				5725762B2A52843C0099BE23 /* Endpoint.swift */,
-				5725762D2A528C1E0099BE23 /* RequestService.swift */,
-				572576312A5299E50099BE23 /* NetworkService.swift */,
-				572576822A52ACB10099BE23 /* DataTransferService.swift */,
+				572576942A52C7540099BE23 /* ResponseDTO.swift */,
+				5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */,
+				5725768C2A52C5F30099BE23 /* Endpoint */,
+				5725768B2A52C5E90099BE23 /* Infrastructure */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -186,6 +198,36 @@
 				5725767B2A52A3240099BE23 /* MockRequestService.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		5725768B2A52C5E90099BE23 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				572576292A5153FC0099BE23 /* HTTPMethod.swift */,
+				5725762B2A52843C0099BE23 /* Endpoint.swift */,
+				5725762D2A528C1E0099BE23 /* RequestService.swift */,
+				572576312A5299E50099BE23 /* NetworkService.swift */,
+				572576822A52ACB10099BE23 /* DataTransferService.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5725768C2A52C5F30099BE23 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */,
+				572576912A52C71C0099BE23 /* LookUpEndpoint.swift */,
+				572576982A52C8800099BE23 /* SearchEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		5725769C2A52CDEB0099BE23 /* CacheStorage */ = {
+			isa = PBXGroup;
+			children = (
+				5725769D2A52CDF30099BE23 /* CacheStorage.swift */,
+			);
+			path = CacheStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,12 +354,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
+				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
+				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
+				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
+				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
 				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
 				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
 				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
+				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
