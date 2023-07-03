@@ -29,6 +29,7 @@
 		572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576982A52C8800099BE23 /* SearchEndpoint.swift */; };
 		5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */; };
 		5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769D2A52CDF30099BE23 /* CacheStorage.swift */; };
+		572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576A32A52D0DD0099BE23 /* RootTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		572576982A52C8800099BE23 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestDTO.swift; sourceTree = "<group>"; };
 		5725769D2A52CDF30099BE23 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		572576A32A52D0DD0099BE23 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		5725760D2A514C820099BE23 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				572576A02A52CFA90099BE23 /* Presentation */,
 				572576272A51537C0099BE23 /* Data */,
 				5725760E2A514C820099BE23 /* AppDelegate.swift */,
 				572576102A514C820099BE23 /* SceneDelegate.swift */,
@@ -228,6 +231,14 @@
 				5725769D2A52CDF30099BE23 /* CacheStorage.swift */,
 			);
 			path = CacheStorage;
+			sourceTree = "<group>";
+		};
+		572576A02A52CFA90099BE23 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				572576A32A52D0DD0099BE23 /* RootTabBarController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
+				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
 				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
