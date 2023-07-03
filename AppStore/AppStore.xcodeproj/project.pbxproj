@@ -31,6 +31,8 @@
 		5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769D2A52CDF30099BE23 /* CacheStorage.swift */; };
 		572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576A32A52D0DD0099BE23 /* RootTabBarController.swift */; };
 		572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576A62A52D2160099BE23 /* TodayViewController.swift */; };
+		572576B22A52D44B0099BE23 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B12A52D44B0099BE23 /* App.swift */; };
+		572576B62A52D5170099BE23 /* AppsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576B52A52D5170099BE23 /* AppsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		5725769D2A52CDF30099BE23 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		572576A32A52D0DD0099BE23 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		572576A62A52D2160099BE23 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		572576B12A52D44B0099BE23 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		572576B52A52D5170099BE23 /* AppsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				572576A02A52CFA90099BE23 /* Presentation */,
+				5725769F2A52CFA50099BE23 /* Domain */,
 				572576272A51537C0099BE23 /* Data */,
 				5725760E2A514C820099BE23 /* AppDelegate.swift */,
 				572576102A514C820099BE23 /* SceneDelegate.swift */,
@@ -235,6 +240,14 @@
 			path = CacheStorage;
 			sourceTree = "<group>";
 		};
+		5725769F2A52CFA50099BE23 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				572576AE2A52D41A0099BE23 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		572576A02A52CFA90099BE23 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,15 @@
 				572576A62A52D2160099BE23 /* TodayViewController.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		572576AE2A52D41A0099BE23 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				572576B12A52D44B0099BE23 /* App.swift */,
+				572576B52A52D5170099BE23 /* AppsPage.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +399,7 @@
 			files = (
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
+				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
 				572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */,
@@ -391,6 +414,7 @@
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
 				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
+				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
