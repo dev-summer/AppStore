@@ -24,6 +24,7 @@
 		572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */; };
 		572576882A52AFA40099BE23 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */; };
 		572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */; };
+		572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576942A52C7540099BE23 /* ResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		572576852A52AF210099BE23 /* DataTransferError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferError+Equatable.swift"; sourceTree = "<group>"; };
 		572576872A52AFA40099BE23 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
 		5725768F2A52C65C0099BE23 /* AppStoreAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreAPIEndpoint.swift; sourceTree = "<group>"; };
+		572576942A52C7540099BE23 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		572576282A51537F0099BE23 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				572576942A52C7540099BE23 /* ResponseDTO.swift */,
 				5725768C2A52C5F30099BE23 /* Endpoint */,
 				5725768B2A52C5E90099BE23 /* Infrastructure */,
 			);
@@ -336,6 +339,7 @@
 				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
 				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
+				572576952A52C7540099BE23 /* ResponseDTO.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
