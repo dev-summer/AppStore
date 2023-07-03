@@ -20,6 +20,7 @@
 		572576762A52A2C90099BE23 /* NetworkError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */; };
 		5725767A2A52A2F50099BE23 /* StubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576792A52A2F50099BE23 /* StubEndpoint.swift */; };
 		5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725767B2A52A3240099BE23 /* MockRequestService.swift */; };
+		572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576822A52ACB10099BE23 /* DataTransferService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		572576752A52A2C90099BE23 /* NetworkError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Equatable.swift"; sourceTree = "<group>"; };
 		572576792A52A2F50099BE23 /* StubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubEndpoint.swift; sourceTree = "<group>"; };
 		5725767B2A52A3240099BE23 /* MockRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestService.swift; sourceTree = "<group>"; };
+		572576822A52ACB10099BE23 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				5725762B2A52843C0099BE23 /* Endpoint.swift */,
 				5725762D2A528C1E0099BE23 /* RequestService.swift */,
 				572576312A5299E50099BE23 /* NetworkService.swift */,
+				572576822A52ACB10099BE23 /* DataTransferService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
 				5725762E2A528C1E0099BE23 /* RequestService.swift in Sources */,
+				572576832A52ACB10099BE23 /* DataTransferService.swift in Sources */,
 				572576132A514C820099BE23 /* ViewController.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
