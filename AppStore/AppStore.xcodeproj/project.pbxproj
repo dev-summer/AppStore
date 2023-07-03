@@ -41,7 +41,6 @@
 		572576172A514C830099BE23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5725761A2A514C830099BE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5725761C2A514C830099BE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		572576232A5151080099BE23 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		572576292A5153FC0099BE23 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5725762B2A52843C0099BE23 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5725762D2A528C1E0099BE23 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
@@ -100,7 +99,6 @@
 				572576172A514C830099BE23 /* Assets.xcassets */,
 				572576192A514C830099BE23 /* LaunchScreen.storyboard */,
 				5725761C2A514C830099BE23 /* Info.plist */,
-				572576232A5151080099BE23 /* .swiftlint.yml */,
 			);
 			path = AppStore;
 			sourceTree = "<group>";
