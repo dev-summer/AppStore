@@ -30,6 +30,7 @@
 		5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */; };
 		5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725769D2A52CDF30099BE23 /* CacheStorage.swift */; };
 		572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576A32A52D0DD0099BE23 /* RootTabBarController.swift */; };
+		572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572576A62A52D2160099BE23 /* TodayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		5725769A2A52C8A90099BE23 /* SearchRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestDTO.swift; sourceTree = "<group>"; };
 		5725769D2A52CDF30099BE23 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		572576A32A52D0DD0099BE23 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		572576A62A52D2160099BE23 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +239,17 @@
 			isa = PBXGroup;
 			children = (
 				572576A32A52D0DD0099BE23 /* RootTabBarController.swift */,
+				572576A52A52D2080099BE23 /* Today */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		572576A52A52D2080099BE23 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				572576A62A52D2160099BE23 /* TodayViewController.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
+				572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */,
 				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
 				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
 				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
