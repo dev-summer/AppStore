@@ -46,6 +46,7 @@
 		57788BF12A5326E20031C5F2 /* DefaultImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */; };
 		57788BF32A53273F0031C5F2 /* ImageAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */; };
 		57788BF72A5328FE0031C5F2 /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF62A5328FE0031C5F2 /* ImageRepositoryTests.swift */; };
+		57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BF82A53F4CC0031C5F2 /* SearchAppUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		57788BF02A5326E20031C5F2 /* DefaultImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageRepository.swift; sourceTree = "<group>"; };
 		57788BF22A53273F0031C5F2 /* ImageAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIEndpoint.swift; sourceTree = "<group>"; };
 		57788BF62A5328FE0031C5F2 /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryTests.swift; sourceTree = "<group>"; };
+		57788BF82A53F4CC0031C5F2 /* SearchAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				572576AE2A52D41A0099BE23 /* Entity */,
+				572576B02A52D42E0099BE23 /* UseCase */,
 				572576AF2A52D4270099BE23 /* RepositoryInterface */,
 			);
 			path = Domain;
@@ -315,6 +318,14 @@
 				57788BEE2A5326AA0031C5F2 /* ImageRepository.swift */,
 			);
 			path = RepositoryInterface;
+			sourceTree = "<group>";
+		};
+		572576B02A52D42E0099BE23 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				57788BF82A53F4CC0031C5F2 /* SearchAppUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		572576BA2A52DBC60099BE23 /* Repository */ = {
@@ -502,6 +513,7 @@
 				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */,
 				57788BEF2A5326AA0031C5F2 /* ImageRepository.swift in Sources */,
 				5725769E2A52CDF30099BE23 /* CacheStorage.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
