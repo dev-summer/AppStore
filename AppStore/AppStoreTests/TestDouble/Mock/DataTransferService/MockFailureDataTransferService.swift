@@ -17,17 +17,7 @@ final class MockFailureDataTransferService: DataTransferService {
         self.error = error
     }
     
-    func request<E: Endpoint, T: Decodable>(
-        _ endpoint: E,
-        completion: @escaping (Result<T, DataTransferError>) -> Void
-    ) -> URLSessionTask? where T == E.Response {
-        requestCallCount += 1
-        completion(.failure(error))
-        
-        return nil
-    }
-    
-    func requestJSONData<E: Endpoint>(
+    func request<E: Endpoint>(
         _ endpoint: E,
         completion: @escaping (Result<E.Response, DataTransferError>) -> Void
     ) -> URLSessionTask? {

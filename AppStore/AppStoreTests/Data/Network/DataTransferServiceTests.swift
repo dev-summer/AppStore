@@ -28,7 +28,7 @@ final class DataTransferServiceTests: XCTestCase {
         sut = DefaultDataTransferService(networkService: networkService)
         
         // when
-        _ = sut.requestJSONData(endpoint) { result in
+        _ = sut.request(endpoint) { result in
             // then
             switch result {
             case .success(let data):
@@ -60,7 +60,7 @@ final class DataTransferServiceTests: XCTestCase {
         sut = DefaultDataTransferService(networkService: networkService)
         
         // when
-        _ = sut.requestJSONData(endpoint) { result in
+        _ = sut.request(endpoint) { result in
             // then
             switch result {
             case .success:
@@ -79,98 +79,6 @@ final class DataTransferServiceTests: XCTestCase {
         // given
         let expectation = XCTestExpectation(description: "failure")
         let endpoint = StubEndpointWithDecodableResponseType(
-            httpMethod: .get,
-            baseURL: URL(string: "base"),
-            path: String.init()
-        )
-        let request = endpoint.urlRequest
-        let networkService = MockFailureNetworkService(request: request, error: .invalidResponse)
-        sut = DefaultDataTransferService(networkService: networkService)
-        
-        // when
-        _ = sut.requestJSONData(endpoint) { result in
-            // then
-            switch result {
-            case .success:
-                XCTFail()
-            case .failure(let error):
-                XCTAssertEqual(error, .networkFailure(.invalidResponse))
-                networkService.verify()
-                expectation.fulfill()
-            }
-        }
-        
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func test_request_decodingSuccess_validDataResponse() {
-        // given
-        let expectation = XCTestExpectation(description: "success")
-        let endpoint = StubEndpointWithDataResponseType(
-            httpMethod: .get,
-            baseURL: URL(string: "base"),
-            path: String.init()
-        )
-        let request = endpoint.urlRequest
-        let data = #"{"value": "Hello"}"#.data(using: .utf8)!
-        let networkService = MockSuccessNetworkService(
-            request: request,
-            data: data
-        )
-        sut = DefaultDataTransferService(networkService: networkService)
-        
-        // when
-        _ = sut.request(endpoint, completion: { result in
-            // then
-            switch result {
-            case .success(let data):
-                XCTAssertEqual(data, data)
-                networkService.verify()
-                expectation.fulfill()
-            case .failure:
-                XCTFail()
-            }
-        })
-        
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func test_request_decodingFailure() {
-        // given
-        let expectation = XCTestExpectation(description: "failure")
-        let endpoint = StubEndpointWithDecodableResponseType(
-            httpMethod: .get,
-            baseURL: URL(string: "base"),
-            path: String.init()
-        )
-        let request = endpoint.urlRequest
-        let data = #"{"value": "Hello"}"#.data(using: .utf8)!
-        let networkService = MockSuccessNetworkService(
-            request: request,
-            data: data
-        )
-        sut = DefaultDataTransferService(networkService: networkService)
-        
-        // when
-        _ = sut.request(endpoint, completion: { result in
-            // then
-            switch result {
-            case .success:
-                XCTFail()
-            case .failure(let error):
-                XCTAssertEqual(error, .decodingFailure)
-                networkService.verify()
-                expectation.fulfill()
-            }
-        })
-        
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func test_request_networkFailure() {
-        // given
-        let expectation = XCTestExpectation(description: "failure")
-        let endpoint = StubEndpointWithDataResponseType(
             httpMethod: .get,
             baseURL: URL(string: "base"),
             path: String.init()

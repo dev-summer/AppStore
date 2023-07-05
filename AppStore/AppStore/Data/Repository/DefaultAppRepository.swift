@@ -66,7 +66,7 @@ final class DefaultAppRepository: AppRepository {
     ) -> URLSessionTask? {
         let endpoint: LookUpEndpoint = LookUpEndpoint(id: id)
         
-        return dataTransferService.requestJSONData(endpoint) { [weak self] result in
+        return dataTransferService.request(endpoint) { [weak self] result in
             switch result {
             case .success(let responseDTO):
                 responseDTO.results.forEach {
@@ -85,7 +85,7 @@ final class DefaultAppRepository: AppRepository {
     ) -> URLSessionTask? {
         let endpoint: SearchEndpoint = SearchEndpoint(with: requestDTO)
         
-        return dataTransferService.requestJSONData(endpoint) { [weak self] result in
+        return dataTransferService.request(endpoint) { [weak self] result in
             switch result {
             case .success(let responseDTO):
                 self?.appListCache.store(responseDTO, for: requestDTO)
