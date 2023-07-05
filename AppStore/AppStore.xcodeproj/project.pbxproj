@@ -50,6 +50,7 @@
 		57788BFC2A5401950031C5F2 /* SearchAppUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BFB2A5401950031C5F2 /* SearchAppUseCaseTests.swift */; };
 		57788BFF2A5402400031C5F2 /* MockSuccessAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BFE2A5402400031C5F2 /* MockSuccessAppRepository.swift */; };
 		57788C012A5404510031C5F2 /* MockFailureAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */; };
+		57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C0D2A5525610031C5F2 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		57788BFB2A5401950031C5F2 /* SearchAppUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppUseCaseTests.swift; sourceTree = "<group>"; };
 		57788BFE2A5402400031C5F2 /* MockSuccessAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessAppRepository.swift; sourceTree = "<group>"; };
 		57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureAppRepository.swift; sourceTree = "<group>"; };
+		57788C0D2A5525610031C5F2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		5725760D2A514C820099BE23 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				57788C0C2A5525480031C5F2 /* Utility */,
 				572576A02A52CFA90099BE23 /* Presentation */,
 				5725769F2A52CFA50099BE23 /* Domain */,
 				572576272A51537C0099BE23 /* Data */,
@@ -397,6 +400,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		57788C0C2A5525480031C5F2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				57788C0D2A5525610031C5F2 /* ImageManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +533,7 @@
 			files = (
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
+				57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */,
 				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
