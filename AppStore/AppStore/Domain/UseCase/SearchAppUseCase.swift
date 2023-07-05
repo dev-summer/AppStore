@@ -26,7 +26,7 @@ protocol SearchAppUseCase {
 final class DefaultSearchAppUseCase: SearchAppUseCase {
     private let appRepository: AppRepository
     
-    init(appRepository: AppRepository = DefaultAppRepository.shared) {
+    init(appRepository: AppRepository = DefaultAppRepository()) {
         self.appRepository = appRepository
     }
     
@@ -43,6 +43,11 @@ final class DefaultSearchAppUseCase: SearchAppUseCase {
         pageSize: Int,
         completion: @escaping (Result<AppsPage, DataTransferError>) -> Void
     ) -> URLSessionTask? {
-        return appRepository.retrieveAppList(with: keyword, page: page, pageSize: pageSize, completion: completion)
+        return appRepository.retrieveAppList(
+            with: keyword,
+            page: page,
+            pageSize: pageSize,
+            completion: completion
+        )
     }
 }
