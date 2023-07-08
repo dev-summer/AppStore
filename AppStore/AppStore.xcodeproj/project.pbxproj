@@ -47,6 +47,7 @@
 		57788BFF2A5402400031C5F2 /* MockSuccessAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788BFE2A5402400031C5F2 /* MockSuccessAppRepository.swift */; };
 		57788C012A5404510031C5F2 /* MockFailureAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */; };
 		57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C0D2A5525610031C5F2 /* ImageManager.swift */; };
+		57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */; };
 		57788C2C2A5965140031C5F2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C2B2A5965140031C5F2 /* Section.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		57788BFE2A5402400031C5F2 /* MockSuccessAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessAppRepository.swift; sourceTree = "<group>"; };
 		57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureAppRepository.swift; sourceTree = "<group>"; };
 		57788C0D2A5525610031C5F2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
 		57788C2B2A5965140031C5F2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 		572576672A52A25E0099BE23 /* AppStoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				57788C132A5592C00031C5F2 /* Presentation */,
 				57788BFA2A5401860031C5F2 /* Domain */,
 				572576742A52A2B90099BE23 /* Extension */,
 				572576702A52A27C0099BE23 /* Data */,
@@ -399,6 +402,22 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		57788C132A5592C00031C5F2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				57788C142A5592C50031C5F2 /* Today */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		57788C142A5592C50031C5F2 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,6 +579,7 @@
 				57788BE02A52F1340031C5F2 /* MockSuccessNetworkService.swift in Sources */,
 				5725767C2A52A3240099BE23 /* MockRequestService.swift in Sources */,
 				57788BE42A52F5CC0031C5F2 /* App+Equatable.swift in Sources */,
+				57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */,
 				572576862A52AF210099BE23 /* DataTransferError+Equatable.swift in Sources */,
 				57788BE82A531EC80031C5F2 /* AppsPage+Equatable.swift in Sources */,
 				57788BFC2A5401950031C5F2 /* SearchAppUseCaseTests.swift in Sources */,
