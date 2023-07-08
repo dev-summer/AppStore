@@ -48,6 +48,7 @@
 		57788C012A5404510031C5F2 /* MockFailureAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */; };
 		57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C0D2A5525610031C5F2 /* ImageManager.swift */; };
 		57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */; };
+		57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C182A57E7280031C5F2 /* UIFont+Weight.swift */; };
 		57788C2C2A5965140031C5F2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C2B2A5965140031C5F2 /* Section.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		57788C002A5404510031C5F2 /* MockFailureAppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureAppRepository.swift; sourceTree = "<group>"; };
 		57788C0D2A5525610031C5F2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
+		57788C182A57E7280031C5F2 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
 		57788C2B2A5965140031C5F2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 		5725760D2A514C820099BE23 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				57788C172A57E71C0031C5F2 /* Extensions */,
 				57788C0C2A5525480031C5F2 /* Utility */,
 				572576A02A52CFA90099BE23 /* Presentation */,
 				5725769F2A52CFA50099BE23 /* Domain */,
@@ -418,6 +421,14 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
+		57788C172A57E71C0031C5F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57788C182A57E7280031C5F2 /* UIFont+Weight.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,6 +570,7 @@
 				572576BC2A52DC0A0099BE23 /* DefaultAppRepository.swift in Sources */,
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
+				57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */,
 				57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
