@@ -34,10 +34,10 @@ struct AppResponse: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case appID = "trackId"
-        case appName
+        case appName = "trackName"
         case price
         case formattedPrice
-        case categoryName
+        case categoryName = "primaryGenreName"
         case appIconURL = "artworkUrl512"
         case averageUserRating
         case userRatingCount
