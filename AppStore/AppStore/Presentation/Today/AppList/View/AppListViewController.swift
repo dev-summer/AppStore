@@ -50,6 +50,7 @@ final class AppListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureHierarchy()
         configureConstraints()
         configureCollectionView()
@@ -58,6 +59,10 @@ final class AppListViewController: UIViewController {
         viewModel.fetchAppList()
     }
     
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+
     private func configureHierarchy() {
         [collectionView, closeButton].forEach { view.addSubview($0) }
     }
