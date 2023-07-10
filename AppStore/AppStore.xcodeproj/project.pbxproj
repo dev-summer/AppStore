@@ -314,7 +314,6 @@
 		572576A52A52D2080099BE23 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				572576A62A52D2160099BE23 /* TodayViewController.swift */,
 				572576A92A52D3500099BE23 /* ViewModel */,
 				572576A82A52D34A0099BE23 /* View */,
 				572576AC2A52D3890099BE23 /* TodayItem.swift */,
@@ -326,6 +325,7 @@
 		572576A82A52D34A0099BE23 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				572576A62A52D2160099BE23 /* TodayViewController.swift */,
 				57788C232A5805070031C5F2 /* SectionBackgroundView.swift */,
 				57788C1F2A5800B20031C5F2 /* SectionHeaderView.swift */,
 				57788C212A5801F50031C5F2 /* TodayLargeCell.swift */,
