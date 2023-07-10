@@ -14,6 +14,7 @@ final class AppListViewModel {
     var description: String?
     var title: String?
     var appsDelivered: (([TodayItem]) -> Void)?
+    var cellTapped: ((DetailViewModel) -> Void)?
     private let useCase: SearchAppUseCase
     private let keyword: String
     
@@ -32,5 +33,9 @@ final class AppListViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func didTapCell(with item: TodayItem) {
+        cellTapped?(DetailViewModel(appID: item.appID))
     }
 }

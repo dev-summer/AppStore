@@ -81,6 +81,7 @@ final class AppListViewController: UIViewController {
     }
     
     private func configureCollectionView() {
+        collectionView.delegate = self
         collectionView.collectionViewLayout = createCollectionViewLayout()
         configureDataSource()
         registerSupplementaryViews()
@@ -170,5 +171,22 @@ final class AppListViewController: UIViewController {
             snapshot.appendItems(items, toSection: .list)
             self?.dataSource?.apply(snapshot)
         }
+        viewModel.cellTapped = { [weak self] viewModel in
+            self?.showAppDetail(with: viewModel)
+        }
+    }
+    
+    private func showAppDetail(with viewModel: DetailViewModel) {
+        let detailViewController = DetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
+extension AppListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = dataSource?.itemIdentifier(for: indexPath) else { return }
+        viewModel.didTapCell(with: item)
+    }
+}
     }
 }
