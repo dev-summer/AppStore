@@ -61,6 +61,7 @@
 		57788C332A5C37BE0031C5F2 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C322A5C37BE0031C5F2 /* AppListViewModel.swift */; };
 		57788C382A5C39C80031C5F2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C372A5C39C80031C5F2 /* DetailViewModel.swift */; };
 		57788C3B2A5C3BD70031C5F2 /* AppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C3A2A5C3BD70031C5F2 /* AppListViewController.swift */; };
+		57788C3E2A5C54BA0031C5F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		57788C322A5C37BE0031C5F2 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		57788C372A5C39C80031C5F2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		57788C3A2A5C3BD70031C5F2 /* AppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewController.swift; sourceTree = "<group>"; };
+		57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +491,7 @@
 		57788C342A5C39910031C5F2 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				57788C3C2A5C54B00031C5F2 /* View */,
 				57788C362A5C39BA0031C5F2 /* ViewModel */,
 			);
 			path = Detail;
@@ -514,6 +517,14 @@
 			isa = PBXGroup;
 			children = (
 				57788C3A2A5C3BD70031C5F2 /* AppListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57788C3C2A5C54B00031C5F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +679,7 @@
 				5725760F2A514C820099BE23 /* AppDelegate.swift in Sources */,
 				572576112A514C820099BE23 /* SceneDelegate.swift in Sources */,
 				57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */,
+				57788C3E2A5C54BA0031C5F2 /* DetailViewController.swift in Sources */,
 				57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 				57788C2A2A5844540031C5F2 /* TodayListCell.swift in Sources */,
