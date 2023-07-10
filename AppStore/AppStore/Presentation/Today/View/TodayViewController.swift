@@ -34,8 +34,13 @@ final class TodayViewController: UIViewController {
         configureHierarchy()
         configureConstraints()
         configureCollectionView()
+        configureNavigationBar()
         bind()
         viewModel.fetchApps()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureHierarchy() {
