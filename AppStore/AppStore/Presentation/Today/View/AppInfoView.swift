@@ -88,7 +88,7 @@ final class AppInfoView: UIView {
         appCategoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             appCategoryLabel.topAnchor.constraint(equalTo: appTitleLabel.bottomAnchor, constant: 4),
-            appCategoryLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 4),
+            appCategoryLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             appCategoryLabel.leadingAnchor.constraint(equalTo: appTitleLabel.leadingAnchor)
         ])
         
