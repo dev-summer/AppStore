@@ -62,6 +62,7 @@
 		57788C382A5C39C80031C5F2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C372A5C39C80031C5F2 /* DetailViewModel.swift */; };
 		57788C3B2A5C3BD70031C5F2 /* AppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C3A2A5C3BD70031C5F2 /* AppListViewController.swift */; };
 		57788C3E2A5C54BA0031C5F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */; };
+		57788C422A5C6A9E0031C5F2 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C412A5C6A9E0031C5F2 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		57788C372A5C39C80031C5F2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		57788C3A2A5C3BD70031C5F2 /* AppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewController.swift; sourceTree = "<group>"; };
 		57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		57788C412A5C6A9E0031C5F2 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +469,7 @@
 			children = (
 				57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */,
 				57788C182A57E7280031C5F2 /* UIFont+Weight.swift */,
+				57788C412A5C6A9E0031C5F2 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
 				57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */,
 				57788C242A5805070031C5F2 /* SectionBackgroundView.swift in Sources */,
+				57788C422A5C6A9E0031C5F2 /* UIViewController+Alert.swift in Sources */,
 				572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */,
 				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
 				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
