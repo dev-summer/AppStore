@@ -65,24 +65,6 @@ final class TodayViewController: UIViewController {
         configureSupplementaryViews()
     }
     
-    private func bind() {
-        viewModel.appsDelivered = { [weak self] apps in
-            var snapshot = Snapshot()
-            snapshot.appendSections(Section.allCases)
-            snapshot.appendItems(apps[.large] ?? [], toSection: .large)
-            snapshot.appendItems(apps[.list] ?? [], toSection: .list)
-            self?.dataSource?.apply(snapshot)
-        }
-        viewModel.largeSectionTapped = { [weak self] viewModel in
-            self?.showAppDetail(with: viewModel)
-        }
-        viewModel.listSectionTapped = { [weak self] viewModel in
-            viewModel.description = Namespace.sectionHeaderDescription
-            viewModel.title = Namespace.sectionHeaderTitle
-            self?.showAppList(with: viewModel)
-        }
-    }
-    
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
             let section = Section(rawValue: sectionIndex)
@@ -263,6 +245,24 @@ final class TodayViewController: UIViewController {
                     return nil
                 }
             })
+    }
+    
+    private func bind() {
+        viewModel.appsDelivered = { [weak self] apps in
+            var snapshot = Snapshot()
+            snapshot.appendSections(Section.allCases)
+            snapshot.appendItems(apps[.large] ?? [], toSection: .large)
+            snapshot.appendItems(apps[.list] ?? [], toSection: .list)
+            self?.dataSource?.apply(snapshot)
+        }
+        viewModel.largeSectionTapped = { [weak self] viewModel in
+            self?.showAppDetail(with: viewModel)
+        }
+        viewModel.listSectionTapped = { [weak self] viewModel in
+            viewModel.description = Namespace.sectionHeaderDescription
+            viewModel.title = Namespace.sectionHeaderTitle
+            self?.showAppList(with: viewModel)
+        }
     }
     
     private func showAppDetail(with viewModel: DetailViewModel) {
