@@ -68,6 +68,14 @@ final class TodayViewController: UIViewController {
             snapshot.appendItems(apps[.list] ?? [], toSection: .list)
             self?.dataSource?.apply(snapshot)
         }
+        viewModel.largeSectionTapped = { [weak self] viewModel in
+            self?.showAppDetail(with: viewModel)
+        }
+        viewModel.listSectionTapped = { [weak self] viewModel in
+            viewModel.description = Namespace.sectionHeaderDescription
+            viewModel.title = Namespace.sectionHeaderTitle
+            self?.showAppList(with: viewModel)
+        }
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
@@ -250,5 +258,31 @@ final class TodayViewController: UIViewController {
                     return nil
                 }
             })
+    }
+    
+    private func showAppDetail(with viewModel: DetailViewModel) {
+        let detailViewController = DetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    private func showAppList(with viewModel: AppListViewModel) {
+        let appListViewController = AppListViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: appListViewController)
+        navigationController.modalPresentationStyle = .overFullScreen
+        present(navigationController, animated: true)
+    }
+}
+
+extension TodayViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if #available(iOS 15.0, *) {
+            guard let section = dataSource?.sectionIdentifier(for: indexPath.section),
+                  let item = dataSource?.itemIdentifier(for: indexPath) else { return }
+            viewModel.didTapCellAt(section: section, with: item)
+        } else {
+            guard let section = Section(rawValue: indexPath.section),
+                  let item = dataSource?.itemIdentifier(for: indexPath) else { return }
+            viewModel.didTapCellAt(section: section, with: item)
+        }
     }
 }

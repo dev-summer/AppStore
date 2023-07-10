@@ -14,6 +14,8 @@ final class TodayViewModel {
     }
     
     var appsDelivered: (([Section: [TodayItem]]) -> Void)?
+    var largeSectionTapped: ((DetailViewModel) -> Void)?
+    var listSectionTapped: ((AppListViewModel) -> Void)?
     private let useCase: SearchAppUseCase
     private var apps: [Section: [TodayItem]] = [:] {
         didSet {
@@ -29,6 +31,15 @@ final class TodayViewModel {
     func fetchApps() {
         searchAppInfo(with: Query.exampleID)
         searchAppList(with: Query.exampleKeyword, page: Query.page, pageSize: Query.pageSize)
+    }
+    
+    func didTapCellAt(section: Section, with item: TodayItem) {
+        switch section {
+        case .large:
+            largeSectionTapped?(DetailViewModel(appID: item.appID))
+        case .list:
+            listSectionTapped?(AppListViewModel(keyword: Query.exampleKeyword))
+        }
     }
     
     private func searchAppInfo(with id: Int) {
