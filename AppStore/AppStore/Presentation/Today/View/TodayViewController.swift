@@ -159,7 +159,7 @@ final class TodayViewController: UIViewController {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .topLeading
         )
-        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 32, bottom: .zero, trailing: 32)
         
         return header
     }
