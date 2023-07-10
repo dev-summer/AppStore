@@ -14,6 +14,7 @@ final class TodayViewModel {
     }
     
     var appsDelivered: (([Section: [TodayItem]]) -> Void)?
+    var errorDelivered: ((String) -> Void)?
     var largeSectionTapped: ((DetailViewModel) -> Void)?
     var listSectionTapped: ((AppListViewModel) -> Void)?
     private let useCase: SearchAppUseCase
@@ -49,8 +50,7 @@ final class TodayViewModel {
                 let item = TodayItem(app: app, type: .large)
                 self?.apps[item.type]?.append(item)
             case .failure(let error):
-                // TODO: 에러처리
-                print(error.localizedDescription)
+                self?.errorDelivered?(error.localizedDescription)
             }
         }
     }
@@ -62,8 +62,7 @@ final class TodayViewModel {
                 let items: [TodayItem] = appsPage.searchResults.compactMap { TodayItem(app: $0, type: .list) }
                 self?.apps[.list]?.append(contentsOf: items)
             case .failure(let error):
-                // TODO: 에러처리
-                print(error.localizedDescription)
+                self?.errorDelivered?(error.localizedDescription)
             }
         }
     }

@@ -18,6 +18,7 @@ final class TodayViewController: UIViewController {
         static let layoutHeaderTitle: String = "Today"
         static let sectionHeaderDescription: String = "스케줄 관리를 도와주는"
         static let sectionHeaderTitle: String = "캘린더 앱"
+        static let confirm: String  = "확인"
     }
     
     private let viewModel: TodayViewModel = TodayViewModel()
@@ -263,6 +264,9 @@ final class TodayViewController: UIViewController {
             viewModel.title = Namespace.sectionHeaderTitle
             self?.showAppList(with: viewModel)
         }
+        viewModel.errorDelivered = { [weak self] message in
+            self?.showErrorAlert(with: message)
+        }
     }
     
     private func showAppDetail(with viewModel: DetailViewModel) {
@@ -275,6 +279,12 @@ final class TodayViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: appListViewController)
         navigationController.modalPresentationStyle = .overFullScreen
         present(navigationController, animated: true)
+    }
+    
+    private func showErrorAlert(with message: String) {
+        let action = UIAlertAction(title: Namespace.confirm, style: .default)
+        let alert = createAlert(with: message, action: action)
+        present(alert, animated: true)
     }
 }
 
