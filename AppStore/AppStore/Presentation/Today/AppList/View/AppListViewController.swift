@@ -11,6 +11,7 @@ final class AppListViewController: UIViewController {
     private enum Namespace {
         static let closeButtonIcon: String = "xmark.circle.fill"
         static let buttonBackground: String = "circle.fill"
+        static let confirm: String  = "확인"
     }
     
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>
@@ -184,11 +185,22 @@ final class AppListViewController: UIViewController {
         viewModel.cellTapped = { [weak self] viewModel in
             self?.showAppDetail(with: viewModel)
         }
+        viewModel.errorDelivered = { [weak self] message in
+            self?.showErrorAlert(with: message)
+        }
     }
     
     private func showAppDetail(with viewModel: DetailViewModel) {
         let detailViewController = DetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    private func showErrorAlert(with message: String) {
+        let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] action in
+            self?.dismiss(animated: true)
+        }
+        let alert = createAlert(with: message, action: action)
+        present(alert, animated: true)
     }
 }
 

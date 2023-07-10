@@ -14,6 +14,7 @@ final class AppListViewModel {
     var description: String?
     var title: String?
     var appsDelivered: (([TodayItem]) -> Void)?
+    var errorDelivered: ((String) -> Void)?
     var cellTapped: ((DetailViewModel) -> Void)?
     private let useCase: SearchAppUseCase
     private let keyword: String
@@ -30,7 +31,7 @@ final class AppListViewModel {
                 let items: [TodayItem] = appsPage.searchResults.compactMap { TodayItem(app: $0, type: .list) }
                 self?.appsDelivered?(items)
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.errorDelivered?(error.localizedDescription)
             }
         }
     }
