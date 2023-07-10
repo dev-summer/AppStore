@@ -49,6 +49,7 @@
 		57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C0D2A5525610031C5F2 /* ImageManager.swift */; };
 		57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */; };
 		57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C182A57E7280031C5F2 /* UIFont+Weight.swift */; };
+		57788C1C2A57E7A40031C5F2 /* LayoutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C1B2A57E7A40031C5F2 /* LayoutHeaderView.swift */; };
 		57788C1E2A57F0B20031C5F2 /* DateFormatter+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */; };
 		57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C212A5801F50031C5F2 /* TodayLargeCell.swift */; };
 		57788C262A582F910031C5F2 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C252A582F910031C5F2 /* AppInfoView.swift */; };
@@ -113,6 +114,7 @@
 		57788C0D2A5525610031C5F2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
 		57788C182A57E7280031C5F2 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
+		57788C1B2A57E7A40031C5F2 /* LayoutHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHeaderView.swift; sourceTree = "<group>"; };
 		57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+shared.swift"; sourceTree = "<group>"; };
 		57788C212A5801F50031C5F2 /* TodayLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLargeCell.swift; sourceTree = "<group>"; };
 		57788C252A582F910031C5F2 /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		572576A02A52CFA90099BE23 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				57788C1A2A57E7730031C5F2 /* Common */,
 				572576A32A52D0DD0099BE23 /* RootTabBarController.swift */,
 				572576A52A52D2080099BE23 /* Today */,
 			);
@@ -452,6 +455,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		57788C1A2A57E7730031C5F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				57788C1B2A57E7A40031C5F2 /* LayoutHeaderView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -579,6 +590,7 @@
 				57788C1E2A57F0B20031C5F2 /* DateFormatter+shared.swift in Sources */,
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
+				57788C1C2A57E7A40031C5F2 /* LayoutHeaderView.swift in Sources */,
 				57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */,
 				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
