@@ -53,6 +53,7 @@
 		57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C212A5801F50031C5F2 /* TodayLargeCell.swift */; };
 		57788C262A582F910031C5F2 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C252A582F910031C5F2 /* AppInfoView.swift */; };
 		57788C282A582FA10031C5F2 /* AppInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */; };
+		57788C2A2A5844540031C5F2 /* TodayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C292A5844540031C5F2 /* TodayListCell.swift */; };
 		57788C2C2A5965140031C5F2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C2B2A5965140031C5F2 /* Section.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		57788C212A5801F50031C5F2 /* TodayLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLargeCell.swift; sourceTree = "<group>"; };
 		57788C252A582F910031C5F2 /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewModel.swift; sourceTree = "<group>"; };
+		57788C292A5844540031C5F2 /* TodayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayListCell.swift; sourceTree = "<group>"; };
 		57788C2B2A5965140031C5F2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				57788C212A5801F50031C5F2 /* TodayLargeCell.swift */,
+				57788C292A5844540031C5F2 /* TodayListCell.swift */,
 				57788C252A582F910031C5F2 /* AppInfoView.swift */,
 			);
 			path = View;
@@ -595,6 +598,7 @@
 				57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */,
 				57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
+				57788C2A2A5844540031C5F2 /* TodayListCell.swift in Sources */,
 				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
 				572576B42A52D4840099BE23 /* AppRepository.swift in Sources */,
 				57788C2C2A5965140031C5F2 /* Section.swift in Sources */,
