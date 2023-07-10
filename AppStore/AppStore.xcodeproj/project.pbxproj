@@ -50,6 +50,7 @@
 		57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */; };
 		57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C182A57E7280031C5F2 /* UIFont+Weight.swift */; };
 		57788C1E2A57F0B20031C5F2 /* DateFormatter+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */; };
+		57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C212A5801F50031C5F2 /* TodayLargeCell.swift */; };
 		57788C262A582F910031C5F2 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C252A582F910031C5F2 /* AppInfoView.swift */; };
 		57788C282A582FA10031C5F2 /* AppInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */; };
 		57788C2C2A5965140031C5F2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C2B2A5965140031C5F2 /* Section.swift */; };
@@ -112,6 +113,7 @@
 		57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
 		57788C182A57E7280031C5F2 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
 		57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+shared.swift"; sourceTree = "<group>"; };
+		57788C212A5801F50031C5F2 /* TodayLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLargeCell.swift; sourceTree = "<group>"; };
 		57788C252A582F910031C5F2 /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewModel.swift; sourceTree = "<group>"; };
 		57788C2B2A5965140031C5F2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		572576A82A52D34A0099BE23 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57788C212A5801F50031C5F2 /* TodayLargeCell.swift */,
 				57788C252A582F910031C5F2 /* AppInfoView.swift */,
 			);
 			path = View;
@@ -577,6 +580,7 @@
 				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
+				57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */,
 				572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */,
 				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
 				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
