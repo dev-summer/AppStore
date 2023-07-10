@@ -50,6 +50,7 @@
 		57788C162A5592D00031C5F2 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */; };
 		57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C182A57E7280031C5F2 /* UIFont+Weight.swift */; };
 		57788C1E2A57F0B20031C5F2 /* DateFormatter+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */; };
+		57788C282A582FA10031C5F2 /* AppInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */; };
 		57788C2C2A5965140031C5F2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C2B2A5965140031C5F2 /* Section.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		57788C152A5592D00031C5F2 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
 		57788C182A57E7280031C5F2 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
 		57788C1D2A57F0B20031C5F2 /* DateFormatter+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+shared.swift"; sourceTree = "<group>"; };
+		57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewModel.swift; sourceTree = "<group>"; };
 		57788C2B2A5965140031C5F2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				572576AA2A52D3590099BE23 /* TodayViewModel.swift */,
+				57788C272A582FA10031C5F2 /* AppInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
 				572576B42A52D4840099BE23 /* AppRepository.swift in Sources */,
 				57788C2C2A5965140031C5F2 /* Section.swift in Sources */,
+				57788C282A582FA10031C5F2 /* AppInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
