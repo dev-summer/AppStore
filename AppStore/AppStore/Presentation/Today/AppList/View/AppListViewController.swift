@@ -50,6 +50,7 @@ final class AppListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureStatusBar()
         configureNavigationBar()
         configureHierarchy()
         configureConstraints()
@@ -57,6 +58,10 @@ final class AppListViewController: UIViewController {
         configureCloseButtonAction()
         bind()
         viewModel.fetchAppList()
+    }
+    
+    private func configureStatusBar() {
+        navigationController?.modalPresentationCapturesStatusBarAppearance = true
     }
     
     private func configureNavigationBar() {
@@ -193,5 +198,15 @@ extension AppListViewController: UICollectionViewDelegate {
         viewModel.didTapCell(with: item)
     }
 }
+
+extension AppListViewController {
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+}
+
+extension UINavigationController {
+    open override var prefersStatusBarHidden: Bool {
+        return topViewController?.prefersStatusBarHidden ?? false
     }
 }
