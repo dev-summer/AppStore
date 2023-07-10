@@ -314,9 +314,9 @@
 		572576A02A52CFA90099BE23 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				57788C342A5C39910031C5F2 /* Detail */,
-				57788C1A2A57E7730031C5F2 /* Common */,
 				572576A32A52D0DD0099BE23 /* RootTabBarController.swift */,
+				57788C1A2A57E7730031C5F2 /* Common */,
+				57788C342A5C39910031C5F2 /* Detail */,
 				572576A52A52D2080099BE23 /* Today */,
 			);
 			path = Presentation;
@@ -326,8 +326,8 @@
 			isa = PBXGroup;
 			children = (
 				57788C312A5C37B10031C5F2 /* AppList */,
-				572576A92A52D3500099BE23 /* ViewModel */,
 				572576A82A52D34A0099BE23 /* View */,
+				572576A92A52D3500099BE23 /* ViewModel */,
 				572576AC2A52D3890099BE23 /* TodayItem.swift */,
 				57788C2B2A5965140031C5F2 /* Section.swift */,
 			);
