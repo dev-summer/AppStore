@@ -256,26 +256,28 @@ final class TodayViewController: UIViewController {
             snapshot.appendItems(apps[.list] ?? [], toSection: .list)
             self?.dataSource?.apply(snapshot)
         }
-        viewModel.largeSectionTapped = { [weak self] viewModel in
-            self?.showAppDetail(with: viewModel)
+        viewModel.largeSectionTapped = { [weak self] appID in
+            self?.showAppDetail(with: appID)
         }
-        viewModel.listSectionTapped = { [weak self] viewModel in
-            viewModel.description = Namespace.sectionHeaderDescription
-            viewModel.title = Namespace.sectionHeaderTitle
-            self?.showAppList(with: viewModel)
+        viewModel.listSectionTapped = { [weak self] keyword in
+            self?.showAppListWith(
+                keyword: keyword,
+                title: Namespace.sectionHeaderTitle,
+                description: Namespace.sectionHeaderDescription
+            )
         }
         viewModel.errorDelivered = { [weak self] message in
             self?.showErrorAlert(with: message)
         }
     }
     
-    private func showAppDetail(with viewModel: DetailViewModel) {
-        let detailViewController = DetailViewController(viewModel: viewModel)
+    private func showAppDetail(with appID: Int) {
+        let detailViewController = DetailViewController(appID: appID)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
-    private func showAppList(with viewModel: AppListViewModel) {
-        let appListViewController = AppListViewController(viewModel: viewModel)
+    private func showAppListWith(keyword: String, title: String, description: String) {
+        let appListViewController = AppListViewController(keyword: keyword, title: title, description: description)
         let navigationController = UINavigationController(rootViewController: appListViewController)
         navigationController.modalPresentationStyle = .overFullScreen
         present(navigationController, animated: true)

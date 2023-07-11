@@ -40,8 +40,8 @@ final class AppListViewController: UIViewController {
         return button
     }()
     
-    init(viewModel: AppListViewModel) {
-        self.viewModel = viewModel
+    init(keyword: String, title: String, description: String) {
+        self.viewModel = AppListViewModel(keyword: keyword, title: title, description: description)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -190,8 +190,8 @@ final class AppListViewController: UIViewController {
         }
     }
     
-    private func showAppDetail(with viewModel: DetailViewModel) {
-        let detailViewController = DetailViewController(viewModel: viewModel)
+    private func showAppDetail(with appID: Int) {
+        let detailViewController = DetailViewController(appID: appID)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

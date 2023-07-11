@@ -10,8 +10,8 @@ import UIKit
 final class DetailViewController: UIViewController {
     private let viewModel: DetailViewModel
     
-    init(viewModel: DetailViewModel) {
-        self.viewModel = viewModel
+    init(appID: Int) {
+        self.viewModel = DetailViewModel(appID: appID)
         super.init(nibName: nil, bundle: nil)
     }
     

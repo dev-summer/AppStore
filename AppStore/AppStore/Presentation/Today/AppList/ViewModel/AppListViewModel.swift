@@ -19,9 +19,11 @@ final class AppListViewModel {
     private let useCase: SearchAppUseCase
     private let keyword: String
     
-    init(useCase: SearchAppUseCase = DefaultSearchAppUseCase(), keyword: String) {
-        self.useCase = useCase
+    init(keyword: String, title: String, description: String, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
         self.keyword = keyword
+        self.title = title
+        self.description = description
+        self.useCase = useCase
     }
     
     func fetchAppList() {
@@ -37,6 +39,6 @@ final class AppListViewModel {
     }
     
     func didTapCell(with item: TodayItem) {
-        cellTapped?(DetailViewModel(appID: item.appID))
+        cellTapped?(item.appID)
     }
 }
