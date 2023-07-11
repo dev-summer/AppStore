@@ -11,13 +11,13 @@ final class AppListViewModel {
         static let pageSize: Int = 20
     }
     
-    var description: String?
-    var title: String?
+    let title: String
+    let description: String
+    var cellTapped: ((Int) -> Void)?
     var appsDelivered: (([TodayItem]) -> Void)?
     var errorDelivered: ((String) -> Void)?
-    var cellTapped: ((DetailViewModel) -> Void)?
-    private let useCase: SearchAppUseCase
     private let keyword: String
+    private let useCase: SearchAppUseCase
     
     init(keyword: String, title: String, description: String, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
         self.keyword = keyword

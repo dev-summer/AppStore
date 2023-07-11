@@ -11,8 +11,8 @@ final class DetailViewModel {
     private let useCase: SearchAppUseCase
     private let appID: Int
     
-    init(useCase: SearchAppUseCase = DefaultSearchAppUseCase(), appID: Int) {
-        self.useCase = useCase
+    init(appID: Int, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
         self.appID = appID
+        self.useCase = useCase
     }
 }

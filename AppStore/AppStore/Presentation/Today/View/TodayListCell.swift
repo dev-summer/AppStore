@@ -15,7 +15,7 @@ final class TodayListCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureHierarchy()
-        configureConstraints() 
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {

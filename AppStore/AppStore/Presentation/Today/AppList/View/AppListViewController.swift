@@ -9,9 +9,9 @@ import UIKit
 
 final class AppListViewController: UIViewController {
     private enum Namespace {
+        static let confirm: String  = "확인"
         static let closeButtonIcon: String = "xmark.circle.fill"
         static let buttonBackground: String = "circle.fill"
-        static let confirm: String  = "확인"
     }
     
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>

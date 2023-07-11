@@ -14,11 +14,11 @@ final class TodayViewController: UIViewController {
     typealias ListCellRegistration = UICollectionView.CellRegistration<TodayListCell, TodayItem>
     
     private enum Namespace {
+        static let confirm: String = "확인"
         static let layoutHeader: String = "layout header"
         static let layoutHeaderTitle: String = "Today"
-        static let sectionHeaderDescription: String = "스케줄 관리를 도와주는"
         static let sectionHeaderTitle: String = "캘린더 앱"
-        static let confirm: String  = "확인"
+        static let sectionHeaderDescription: String = "스케줄 관리를 도와주는"
     }
     
     private let viewModel: TodayViewModel = TodayViewModel()
@@ -195,8 +195,8 @@ final class TodayViewController: UIViewController {
             for: indexPath
         ) as? LayoutHeaderView else { return nil }
         
-        header.setTitle(with: Namespace.layoutHeaderTitle)
         header.showDate()
+        header.setTitle(with: Namespace.layoutHeaderTitle)
         
         return header
     }
