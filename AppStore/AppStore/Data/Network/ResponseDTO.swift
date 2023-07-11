@@ -38,7 +38,7 @@ struct AppResponse: Decodable {
         case price
         case formattedPrice
         case categoryName = "primaryGenreName"
-        case appIconURL = "artworkUrl512"
+        case appIconURL = "artworkUrl100"
         case averageUserRating
         case userRatingCount
         case screenshotURLs = "screenshotUrls"
