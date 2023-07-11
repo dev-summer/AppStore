@@ -20,13 +20,13 @@ final class AppListViewController: UIViewController {
     private let viewModel: AppListViewModel
     private var dataSource: DataSource?
     
-    private var collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
         collectionView.backgroundColor = .systemBackground
         return collectionView
     }()
     
-    private var closeButton: UIButton = {
+    private let closeButton: UIButton = {
         let button = UIButton()
         let iconConfig = UIImage.SymbolConfiguration(pointSize: 40)
         let image = UIImage(systemName: Namespace.closeButtonIcon, withConfiguration: iconConfig)?

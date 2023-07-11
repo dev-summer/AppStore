@@ -10,7 +10,7 @@ import UIKit
 final class SectionBackgroundView: UICollectionReusableView {
     static var identifier: String { return String(describing: self) }
     
-    private var backgroundView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 16
