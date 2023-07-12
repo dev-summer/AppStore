@@ -193,7 +193,7 @@ final class AppListViewController: UIViewController {
     }
     
     private func showErrorAlert(with message: String) {
-        let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] action in
+        let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] _ in
             self?.dismiss(animated: true)
         }
         let alert = createAlert(with: message, action: action)
