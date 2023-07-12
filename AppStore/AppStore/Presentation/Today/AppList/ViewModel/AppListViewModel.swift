@@ -19,10 +19,10 @@ final class AppListViewModel {
     private let keyword: String
     private let useCase: SearchAppUseCase
     
-    init(keyword: String, title: String, description: String, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
-        self.keyword = keyword
+    init(title: String, description: String, keyword: String, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
         self.title = title
         self.description = description
+        self.keyword = keyword
         self.useCase = useCase
     }
     

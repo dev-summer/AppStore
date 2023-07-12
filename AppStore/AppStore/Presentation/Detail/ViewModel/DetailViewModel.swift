@@ -8,8 +8,8 @@
 import Foundation
 
 final class DetailViewModel {
-    private let useCase: SearchAppUseCase
     private let appID: Int
+    private let useCase: SearchAppUseCase
     
     init(appID: Int, useCase: SearchAppUseCase = DefaultSearchAppUseCase()) {
         self.appID = appID

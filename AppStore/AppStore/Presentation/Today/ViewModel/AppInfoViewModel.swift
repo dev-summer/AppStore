@@ -13,15 +13,15 @@ final class AppInfoViewModel {
     }
     
     let appName: String
-    let appCategory: String
     let appIconURL: String
+    let appCategory: String
     let price: String
     var imageDataDelivered: ((Data) -> Void)?
     
     init(item: TodayItem) {
         self.appName = item.appName
-        self.appCategory = item.appCategory
         self.appIconURL = item.appIconURL
+        self.appCategory = item.appCategory
         self.price = item.price == .zero ? Namespace.free : item.formattedPrice
     }
     

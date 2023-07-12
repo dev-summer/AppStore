@@ -41,7 +41,7 @@ final class AppListViewController: UIViewController {
     }()
     
     init(keyword: String, title: String, description: String) {
-        self.viewModel = AppListViewModel(keyword: keyword, title: title, description: description)
+        self.viewModel = AppListViewModel( title: title, description: description, keyword: keyword)
         super.init(nibName: nil, bundle: nil)
     }
     
