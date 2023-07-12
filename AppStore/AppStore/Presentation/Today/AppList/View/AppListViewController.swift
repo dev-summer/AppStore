@@ -51,24 +51,21 @@ final class AppListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureStatusBar()
-        configureNavigationBar()
         configureHierarchy()
         configureConstraints()
+        configureViewController()
         configureCollectionView()
         configureCloseButtonAction()
         bind()
         viewModel.fetchAppList()
     }
     
-    private func configureStatusBar() {
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = true
         navigationController?.modalPresentationCapturesStatusBarAppearance = true
     }
     
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
-
     private func configureHierarchy() {
         [collectionView, closeButton].forEach { view.addSubview($0) }
     }
