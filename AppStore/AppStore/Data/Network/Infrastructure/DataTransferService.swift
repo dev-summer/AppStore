@@ -24,12 +24,7 @@ extension DataTransferError: LocalizedError {
 }
 
 protocol DataTransferService {
-    func request<E: Endpoint, T: Decodable>(
-        _ endpoint: E,
-        completion: @escaping (Result<T, DataTransferError>) -> Void
-    ) -> URLSessionTask? where E.Response == T
-    
-    func requestJSONData<E: Endpoint>(
+    func request<E: Endpoint>(
         _ endpoint: E,
         completion: @escaping (Result<E.Response, DataTransferError>) -> Void
     ) -> URLSessionTask?
@@ -42,22 +37,7 @@ final class DefaultDataTransferService: DataTransferService {
         self.networkService = networkService
     }
     
-    func request<E: Endpoint, T: Decodable>(
-        _ endpoint: E,
-        completion: @escaping (Result<T, DataTransferError>) -> Void
-    ) -> URLSessionTask? where E.Response == T {
-        return networkService.request(endpoint.urlRequest) { result in
-            switch result {
-            case .success(let data):
-                let result: Result<T, DataTransferError> = self.decode(data)
-                completion(result)
-            case .failure(let error):
-                completion(.failure(.networkFailure(error)))
-            }
-        }
-    }
-    
-    func requestJSONData<E: Endpoint>(
+    func request<E: Endpoint>(
         _ endpoint: E,
         completion: @escaping (Result<E.Response, DataTransferError>) -> Void
     ) -> URLSessionTask? {
@@ -69,15 +49,6 @@ final class DefaultDataTransferService: DataTransferService {
             case .failure(let error):
                 completion(.failure(.networkFailure(error)))
             }
-        }
-    }
-    
-    private func decode<T: Decodable>(_ data: Data) -> Result<T, DataTransferError> {
-        if T.self is Data.Type,
-           let data = data as? T {
-            return .success(data)
-        } else {
-            return .failure(.decodingFailure)
         }
     }
     
