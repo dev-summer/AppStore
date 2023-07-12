@@ -12,18 +12,21 @@ final class AppInfoViewModel {
         static let free: String = "GET"
     }
     
-    let item: TodayItem
-    var price: String {
-        return item.price == .zero ? Namespace.free : item.formattedPrice
-    }
+    let appName: String
+    let appCategory: String
+    let appIconURL: String
+    let price: String
     var imageDataDelivered: ((Data) -> Void)?
     
     init(item: TodayItem) {
-        self.item = item
+        self.appName = item.appName
+        self.appCategory = item.appCategory
+        self.appIconURL = item.appIconURL
+        self.price = item.price == .zero ? Namespace.free : item.formattedPrice
     }
     
     func fetchIconImage() {
-         ImageManager.retrieveImage(with: item.appIconURL, completion: { [weak self] data in
+         ImageManager.retrieveImage(with: appIconURL, completion: { [weak self] data in
              self?.imageDataDelivered?(data)
         })
     }

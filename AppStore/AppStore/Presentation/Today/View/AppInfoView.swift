@@ -61,9 +61,10 @@ final class AppInfoView: UIView {
     func bind(with item: TodayItem) {
         viewModel = AppInfoViewModel(item: item)
         viewModel?.imageDataDelivered = { [weak self] data in
-            self?.fill(data)
+            self?.fillImage(with: data)
         }
         viewModel?.fetchIconImage()
+        configureContents()
     }
     
     private func configureHierarchy() {
@@ -94,7 +95,7 @@ final class AppInfoView: UIView {
         
         priceButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            priceButton.leadingAnchor.constraint(greaterThanOrEqualTo: appTitleLabel.trailingAnchor, constant: 12),
+            priceButton.leadingAnchor.constraint(equalTo: appTitleLabel.trailingAnchor, constant: 12),
             priceButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             priceButton.heightAnchor.constraint(equalToConstant: 32),
             priceButton.widthAnchor.constraint(equalToConstant: 80),
@@ -102,13 +103,16 @@ final class AppInfoView: UIView {
         ])
     }
     
-    private func fill(_ data: Data) {
+    private func configureContents() {
+        appTitleLabel.text = viewModel?.appName
+        appCategoryLabel.text = viewModel?.appCategory
+        priceButton.setTitle(viewModel?.price, for: .normal)
+    }
+    
+    private func fillImage(with data: Data) {
         DispatchQueue.main.async { [weak self] in
             let icon = UIImage(data: data)
             self?.iconImageView.image = icon
-            self?.appTitleLabel.text = self?.viewModel?.item.appName
-            self?.appCategoryLabel.text = self?.viewModel?.item.categoryName
-            self?.priceButton.setTitle(self?.viewModel?.price, for: .normal)
         }
     }
 }
