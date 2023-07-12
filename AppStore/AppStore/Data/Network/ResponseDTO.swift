@@ -15,12 +15,12 @@ struct ResponseDTO: Decodable {
 struct AppResponse: Decodable {
     let appID: Int
     let appName: String
+    let appIconURL: String
+    let appCategory: String
     let price: Double
     let formattedPrice: String
-    let categoryName: String
-    let appIconURL: String
-    let averageUserRating: Double
     let userRatingCount: Int
+    let averageUserRating: Double
     let screenshotURLs: [String]
     let contentAdvisoryRating: String
     let languageCodesISO2A: [String]
@@ -35,12 +35,12 @@ struct AppResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case appID = "trackId"
         case appName = "trackName"
+        case appIconURL = "artworkUrl100"
+        case appCategory = "primaryGenreName"
         case price
         case formattedPrice
-        case categoryName = "primaryGenreName"
-        case appIconURL = "artworkUrl100"
-        case averageUserRating
         case userRatingCount
+        case averageUserRating
         case screenshotURLs = "screenshotUrls"
         case contentAdvisoryRating
         case languageCodesISO2A
@@ -70,12 +70,12 @@ extension AppResponse {
         return App(
             appID: self.appID,
             appName: self.appName,
+            appIconURL: self.appIconURL,
+            appCategory: self.appCategory,
             price: self.price,
             formattedPrice: self.formattedPrice,
-            categoryName: self.categoryName,
-            appIconURL: self.appIconURL,
-            averageUserRating: self.averageUserRating,
             userRatingCount: self.userRatingCount,
+            averageUserRating: self.averageUserRating,
             screenshotURLs: self.screenshotURLs,
             contentAdvisoryRating: self.contentAdvisoryRating,
             languageCodesISO2A: self.languageCodesISO2A,

@@ -8,12 +8,12 @@
 struct App {
     let appID: Int
     let appName: String
+    let appIconURL: String
+    let appCategory: String
     let price: Double
     let formattedPrice: String
-    let categoryName: String
-    let appIconURL: String
-    let averageUserRating: Double
     let userRatingCount: Int
+    let averageUserRating: Double
     let screenshotURLs: [String]
     let contentAdvisoryRating: String
     let languageCodesISO2A: [String]
