@@ -180,7 +180,7 @@ final class AppListViewController: UIViewController {
             var snapshot = Snapshot()
             snapshot.appendSections([.list])
             snapshot.appendItems(items, toSection: .list)
-            self?.dataSource?.apply(snapshot)
+            self?.dataSource?.apply(snapshot, animatingDifferences: false)
         }
         viewModel.cellTapped = { [weak self] viewModel in
             self?.showAppDetail(with: viewModel)

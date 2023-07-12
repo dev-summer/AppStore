@@ -254,7 +254,7 @@ final class TodayViewController: UIViewController {
             snapshot.appendSections(Section.allCases)
             snapshot.appendItems(apps[.large] ?? [], toSection: .large)
             snapshot.appendItems(apps[.list] ?? [], toSection: .list)
-            self?.dataSource?.apply(snapshot)
+            self?.dataSource?.apply(snapshot, animatingDifferences: false)
         }
         viewModel.largeSectionTapped = { [weak self] appID in
             self?.showAppDetail(with: appID)
