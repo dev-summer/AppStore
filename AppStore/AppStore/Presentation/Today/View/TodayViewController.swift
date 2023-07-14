@@ -283,10 +283,12 @@ final class TodayViewController: UIViewController {
         present(navigationController, animated: true)
     }
     
-    private func showErrorAlert(with message: String) {
-        let action = UIAlertAction(title: Namespace.confirm, style: .default)
-        let alert = createAlert(with: message, action: action)
-        present(alert, animated: true)
+    private func showErrorAlert(with message: String?) {
+        DispatchQueue.main.async {
+            let action = UIAlertAction(title: Namespace.confirm, style: .default)
+            let alert = self.createAlert(with: message ?? .init(), action: action)
+            self.present(alert, animated: true)
+        }
     }
 }
 

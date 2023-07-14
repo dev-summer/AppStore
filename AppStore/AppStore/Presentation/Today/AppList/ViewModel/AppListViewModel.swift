@@ -15,7 +15,7 @@ final class AppListViewModel {
     let description: String
     var cellTapped: ((Int) -> Void)?
     var appsDelivered: (([TodayItem]) -> Void)?
-    var errorDelivered: ((String) -> Void)?
+    var errorDelivered: ((String?) -> Void)?
     private let keyword: String
     private let useCase: SearchAppUseCase
     

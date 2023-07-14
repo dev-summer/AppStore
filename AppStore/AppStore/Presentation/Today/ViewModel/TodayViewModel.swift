@@ -13,9 +13,9 @@ final class TodayViewModel {
         static let pageSize: Int = 5
     }
     
-    var errorDelivered: ((String) -> Void)?
     var largeSectionTapped: ((Int) -> Void)?
     var appsDelivered: (([TodaySection: [TodayItem]]) -> Void)?
+    var errorDelivered: ((String?) -> Void)?
     var listSectionTapped: ((String) -> Void)?
     private let useCase: SearchAppUseCase
     private var apps: [TodaySection: [TodayItem]] = [:] {
