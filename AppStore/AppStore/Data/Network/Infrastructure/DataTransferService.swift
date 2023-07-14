@@ -18,7 +18,7 @@ extension DataTransferError: LocalizedError {
         case .decodingFailure:
             return "decoding error"
         case let .networkFailure(error):
-            return error.localizedDescription
+            return error.errorDescription
         }
     }
 }
