@@ -279,10 +279,12 @@ final class TodayViewController: UIViewController {
     }
     
     private func showAppListWith(keyword: String, title: String, description: String) {
-        let appListViewController = AppListViewController(keyword: keyword, title: title, description: description)
-        let navigationController = UINavigationController(rootViewController: appListViewController)
-        navigationController.modalPresentationStyle = .overFullScreen
-        present(navigationController, animated: true)
+        DispatchQueue.main.async {
+            let appListViewController = AppListViewController(keyword: keyword, title: title, description: description)
+            let navigationController = UINavigationController(rootViewController: appListViewController)
+            navigationController.modalPresentationStyle = .overFullScreen
+            self.present(navigationController, animated: true)
+        }
     }
     
     private func showErrorAlert(with message: String?) {
