@@ -34,13 +34,13 @@ final class TodayViewModelTests: XCTestCase {
     func test_fetchAppsSuccess() {
         // given
         let expectation = XCTestExpectation(description: "success")
-        let expectedResult: [Section: [TodayItem]] = [.large: [TodayItem(app: app, type: .large)], .list: [TodayItem(app: app, type: .list)]]
+        let expectedResult: [TodaySection: [TodayItem]] = [.large: [TodayItem(app: app, type: .large)], .list: [TodayItem(app: app, type: .list)]]
         let useCase: MockSuccessSearchAppUseCase = MockSuccessSearchAppUseCase(app: app)
         var callCount: Int = 0
         sut = TodayViewModel(useCase: useCase)
         
         // when
-        var output: [Section: [TodayItem]] = [:]
+        var output: [TodaySection: [TodayItem]] = [:]
         sut.appsDelivered = { apps in
             output = apps
             callCount += 1

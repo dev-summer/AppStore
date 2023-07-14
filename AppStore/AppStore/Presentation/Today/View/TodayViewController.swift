@@ -8,8 +8,8 @@
 import UIKit
 
 final class TodayViewController: UIViewController {
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, TodayItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<TodaySection, TodayItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<TodaySection, TodayItem>
     typealias LargeCellRegistration = UICollectionView.CellRegistration<TodayLargeCell, TodayItem>
     typealias ListCellRegistration = UICollectionView.CellRegistration<TodayListCell, TodayItem>
     
@@ -68,7 +68,7 @@ final class TodayViewController: UIViewController {
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
-            let section = Section(rawValue: sectionIndex)
+            let section = TodaySection(rawValue: sectionIndex)
             
             switch section {
             case .large:
@@ -182,7 +182,7 @@ final class TodayViewController: UIViewController {
             if kind == Namespace.layoutHeader {
                 return self?.createLayoutHeaderView(indexPath)
             } else {
-                let section = Section(rawValue: indexPath.section)
+                let section = TodaySection(rawValue: indexPath.section)
                 return section == .list ? self?.createSectionHeaderView(indexPath) : nil
             }
         }
@@ -227,7 +227,7 @@ final class TodayViewController: UIViewController {
         dataSource = DataSource(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, item in
-                let section = Section(rawValue: indexPath.section)
+                let section = TodaySection(rawValue: indexPath.section)
                 
                 switch section {
                 case .large:
@@ -251,7 +251,7 @@ final class TodayViewController: UIViewController {
     private func bind() {
         viewModel.appsDelivered = { [weak self] apps in
             var snapshot = Snapshot()
-            snapshot.appendSections(Section.allCases)
+            snapshot.appendSections(TodaySection.allCases)
             snapshot.appendItems(apps[.large] ?? [], toSection: .large)
             snapshot.appendItems(apps[.list] ?? [], toSection: .list)
             self?.dataSource?.apply(snapshot, animatingDifferences: false)
@@ -297,7 +297,7 @@ extension TodayViewController: UICollectionViewDelegate {
                   let item = dataSource?.itemIdentifier(for: indexPath) else { return }
             viewModel.didTapCellAt(section: section, with: item)
         } else {
-            guard let section = Section(rawValue: indexPath.section),
+            guard let section = TodaySection(rawValue: indexPath.section),
                   let item = dataSource?.itemIdentifier(for: indexPath) else { return }
             viewModel.didTapCellAt(section: section, with: item)
         }

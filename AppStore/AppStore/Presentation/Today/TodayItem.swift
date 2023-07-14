@@ -12,9 +12,9 @@ struct TodayItem: Hashable {
     let appCategory: String
     let price: Double
     let formattedPrice: String
-    let type: Section
+    let type: TodaySection
     
-    init(app: App, type: Section) {
+    init(app: App, type: TodaySection) {
         self.appID = app.appID
         self.appName = app.appName
         self.appIconURL = app.appIconURL

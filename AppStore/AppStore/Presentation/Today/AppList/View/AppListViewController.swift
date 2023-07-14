@@ -14,8 +14,8 @@ final class AppListViewController: UIViewController {
         static let buttonBackground: String = "circle.fill"
     }
     
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, TodayItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<TodaySection, TodayItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<TodaySection, TodayItem>
     
     private let viewModel: AppListViewModel
     private var dataSource: DataSource?
