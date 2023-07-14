@@ -60,12 +60,6 @@ final class AppListViewController: UIViewController {
         viewModel.fetchAppList()
     }
     
-    private func configureViewController() {
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.modalPresentationCapturesStatusBarAppearance = true
-    }
-    
     private func configureHierarchy() {
         [collectionView, closeButton].forEach { view.addSubview($0) }
     }
@@ -86,6 +80,12 @@ final class AppListViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 40),
             closeButton.heightAnchor.constraint(equalTo: closeButton.widthAnchor)
         ])
+    }
+    
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.modalPresentationCapturesStatusBarAppearance = true
     }
     
     private func configureCollectionView() {

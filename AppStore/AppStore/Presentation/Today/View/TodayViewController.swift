@@ -34,14 +34,10 @@ final class TodayViewController: UIViewController {
         super.viewDidLoad()
         configureHierarchy()
         configureConstraints()
+        configureViewController()
         configureCollectionView()
-        configureNavigationBar()
         bind()
         viewModel.fetchApps()
-    }
-    
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureHierarchy() {
@@ -56,6 +52,11 @@ final class TodayViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+    
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureCollectionView() {
