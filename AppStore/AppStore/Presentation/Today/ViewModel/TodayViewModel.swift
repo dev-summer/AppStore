@@ -13,9 +13,9 @@ final class TodayViewModel {
         static let pageSize: Int = 5
     }
     
-    var largeSectionTapped: ((Int) -> Void)?
     var appsDelivered: (([TodaySection: [TodayItem]]) -> Void)?
     var errorDelivered: ((String?) -> Void)?
+    var largeSectionTapped: ((App) -> Void)?
     var listSectionTapped: ((String) -> Void)?
     private let useCase: SearchAppUseCase
     private var apps: [TodaySection: [TodayItem]] = [:] {
@@ -37,7 +37,14 @@ final class TodayViewModel {
     func didTapCellAt(section: TodaySection, with item: TodayItem) {
         switch section {
         case .large:
-            largeSectionTapped?(item.appID)
+            useCase.searchApp(with: item.appID) { [weak self] result in
+                switch result {
+                case .success(let app):
+                    self?.largeSectionTapped?(app)
+                case .failure(let error):
+                    self?.errorDelivered?(error.errorDescription)
+                }
+            }
         case .list:
             listSectionTapped?(Query.exampleKeyword)
         }

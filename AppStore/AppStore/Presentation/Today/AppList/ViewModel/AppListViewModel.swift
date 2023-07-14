@@ -13,7 +13,7 @@ final class AppListViewModel {
     
     let title: String
     let description: String
-    var cellTapped: ((Int) -> Void)?
+    var cellTapped: ((App) -> Void)?
     var appsDelivered: (([TodayItem]) -> Void)?
     var errorDelivered: ((String?) -> Void)?
     private let keyword: String
@@ -39,6 +39,13 @@ final class AppListViewModel {
     }
     
     func didTapCell(with item: TodayItem) {
-        cellTapped?(item.appID)
+        useCase.searchApp(with: item.appID) { [weak self] result in
+            switch result {
+            case .success(let app):
+                self?.cellTapped?(app)
+            case .failure(let error):
+                self?.errorDelivered?(error.errorDescription)
+            }
+        }
     }
 }

@@ -179,16 +179,16 @@ final class AppListViewController: UIViewController {
             snapshot.appendItems(items, toSection: .list)
             self?.dataSource?.apply(snapshot, animatingDifferences: false)
         }
-        viewModel.cellTapped = { [weak self] viewModel in
-            self?.showAppDetail(with: viewModel)
+        viewModel.cellTapped = { [weak self] app in
+            self?.showAppDetail(with: app)
         }
         viewModel.errorDelivered = { [weak self] message in
             self?.showErrorAlert(with: message)
         }
     }
     
-    private func showAppDetail(with appID: Int) {
-        let detailViewController = DetailViewController(appID: appID)
+    private func showAppDetail(with app: App) {
+        let detailViewController = DetailViewController(app: app)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

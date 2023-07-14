@@ -271,9 +271,11 @@ final class TodayViewController: UIViewController {
         }
     }
     
-    private func showAppDetail(with appID: Int) {
-        let detailViewController = DetailViewController(appID: appID)
-        navigationController?.pushViewController(detailViewController, animated: true)
+    private func showAppDetail(with app: App) {
+        DispatchQueue.main.async {
+            let detailViewController = DetailViewController(app: app)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
     
     private func showAppListWith(keyword: String, title: String, description: String) {
