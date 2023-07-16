@@ -69,8 +69,8 @@ final class AppListViewController: UIViewController {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -102,6 +102,7 @@ final class AppListViewController: UIViewController {
             let header = self.createSectionHeaderItem()
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: environment)
             section.boundarySupplementaryItems = [header]
+            section.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
             
             return section
         }
@@ -119,6 +120,7 @@ final class AppListViewController: UIViewController {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .topLeading
         )
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
         
         return header
     }
