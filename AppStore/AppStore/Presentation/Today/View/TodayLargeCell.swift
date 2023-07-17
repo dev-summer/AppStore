@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class TodayLargeCell: UICollectionViewCell {
-    static var identifier: String { return String(describing: self) }
-    
+final class TodayLargeCell: UICollectionViewCell {    
     private let topView: UIView = {
         let view = UIView()
         view.alpha = 0.5
