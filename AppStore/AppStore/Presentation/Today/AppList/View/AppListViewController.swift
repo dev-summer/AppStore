@@ -51,13 +51,28 @@ final class AppListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         configureHierarchy()
         configureConstraints()
         configureViewController()
         configureCollectionView()
         configureCloseButtonAction()
-        bind()
         viewModel.fetchAppList()
+    }
+    
+    private func bind() {
+        viewModel.appsDelivered = { [weak self] items in
+            var snapshot = Snapshot()
+            snapshot.appendSections([.list])
+            snapshot.appendItems(items, toSection: .list)
+            self?.dataSource?.apply(snapshot, animatingDifferences: false)
+        }
+        viewModel.cellTapped = { [weak self] app in
+            self?.showAppDetail(with: app)
+        }
+        viewModel.errorDelivered = { [weak self] message in
+            self?.showErrorAlert(with: message)
+        }
     }
     
     private func configureHierarchy() {
@@ -88,6 +103,8 @@ final class AppListViewController: UIViewController {
         navigationController?.modalPresentationCapturesStatusBarAppearance = true
     }
     
+    // MARK: - CollectionView
+    
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.collectionViewLayout = createCollectionViewLayout()
@@ -110,20 +127,7 @@ final class AppListViewController: UIViewController {
         return layout
     }
     
-    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .topLeading
-        )
-        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
-        
-        return header
-    }
+    // MARK: Supplementary Items
     
     private func registerSupplementaryViews() {
         collectionView.register(
@@ -139,6 +143,21 @@ final class AppListViewController: UIViewController {
         }
     }
     
+    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(60)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .topLeading
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        
+        return header
+    }
+    
     private func createSectionHeaderView(_ indexPath: IndexPath) -> SectionHeaderView? {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
@@ -150,6 +169,8 @@ final class AppListViewController: UIViewController {
         
         return header
     }
+    
+    // MARK: DataSource
     
     private func configureDataSource() {
         let listCellRegistration = UICollectionView.CellRegistration<TodayListCell, TodayItem> { cell, _, item in
@@ -167,6 +188,8 @@ final class AppListViewController: UIViewController {
             })
     }
     
+    // MARK: - Button Action
+    
     private func configureCloseButtonAction() {
         let action = UIAction { _ in
             self.dismiss(animated: true)
@@ -174,20 +197,7 @@ final class AppListViewController: UIViewController {
         closeButton.addAction(action, for: .allTouchEvents)
     }
     
-    private func bind() {
-        viewModel.appsDelivered = { [weak self] items in
-            var snapshot = Snapshot()
-            snapshot.appendSections([.list])
-            snapshot.appendItems(items, toSection: .list)
-            self?.dataSource?.apply(snapshot, animatingDifferences: false)
-        }
-        viewModel.cellTapped = { [weak self] app in
-            self?.showAppDetail(with: app)
-        }
-        viewModel.errorDelivered = { [weak self] message in
-            self?.showErrorAlert(with: message)
-        }
-    }
+    // MARK: - Cell Tap Action
     
     private func showAppDetail(with app: App) {
         let detailViewController = DetailViewController(app: app)
@@ -203,12 +213,16 @@ final class AppListViewController: UIViewController {
     }
 }
 
+// MARK: - Delegate Methods
+
 extension AppListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource?.itemIdentifier(for: indexPath) else { return }
         viewModel.didTapCell(with: item)
     }
 }
+
+// MARK: - Status Bar
 
 extension AppListViewController {
     override var prefersStatusBarHidden: Bool {
