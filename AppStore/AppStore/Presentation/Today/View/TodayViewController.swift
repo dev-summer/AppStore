@@ -100,9 +100,7 @@ final class TodayViewController: UIViewController {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 32, bottom: 12, trailing: 32)
-        section.decorationItems = [
-            NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
-        ]
+        section.decorationItems = [createSectionBackground()]
         
         return section
     }
@@ -115,9 +113,7 @@ final class TodayViewController: UIViewController {
         let header = createSectionHeaderItem()
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 32, bottom: 12, trailing: 32)
         section.boundarySupplementaryItems = [header]
-        section.decorationItems = [
-            NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
-        ]
+        section.decorationItems = [createSectionBackground()]
         
         return section
     }
@@ -216,6 +212,15 @@ final class TodayViewController: UIViewController {
         
         return header
     }
+    
+    private func createSectionBackground() -> NSCollectionLayoutDecorationItem {
+        let sectionBackground = NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
+        sectionBackground.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        
+        return sectionBackground
+    }
+    
+    // MARK: DataSource
     
     private func configureDatasource() {
         let largeCellRegistration = LargeCellRegistration { cell, _, item in
