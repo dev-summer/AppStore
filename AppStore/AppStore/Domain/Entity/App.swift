@@ -21,7 +21,7 @@ struct App {
     let description: String
     let releaseNotes: String?
     let version: String
-    let categories: [String]
     let providerName: String
+    let developerName: String
     let minimumOSVersion: String
 }
