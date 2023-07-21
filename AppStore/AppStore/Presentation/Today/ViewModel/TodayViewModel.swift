@@ -42,7 +42,7 @@ final class TodayViewModel {
                 case .success(let app):
                     self?.largeSectionTapped?(app)
                 case .failure(let error):
-                    self?.errorDelivered?(error.errorDescription)
+                    self?.errorDelivered?(error.localizedDescription)
                 }
             }
         case .list:

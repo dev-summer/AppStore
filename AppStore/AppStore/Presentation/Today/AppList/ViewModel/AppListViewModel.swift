@@ -44,7 +44,7 @@ final class AppListViewModel {
             case .success(let app):
                 self?.cellTapped?(app)
             case .failure(let error):
-                self?.errorDelivered?(error.errorDescription)
+                self?.errorDelivered?(error.localizedDescription)
             }
         }
     }
