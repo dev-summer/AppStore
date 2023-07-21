@@ -200,16 +200,20 @@ final class AppListViewController: UIViewController {
     // MARK: - Cell Tap Action
     
     private func showAppDetail(with app: App) {
-        let detailViewController = DetailViewController(app: app)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        DispatchQueue.main.async {
+            let detailViewController = DetailViewController(app: app)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
     
     private func showErrorAlert(with message: String?) {
-        let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] _ in
-            self?.dismiss(animated: true)
+        DispatchQueue.main.async {
+            let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] _ in
+                self?.dismiss(animated: true)
+            }
+            let alert = self.createAlert(with: message ?? .init(), action: action)
+            self.present(alert, animated: true)
         }
-        let alert = createAlert(with: message ?? .init(), action: action)
-        present(alert, animated: true)
     }
 }
 
