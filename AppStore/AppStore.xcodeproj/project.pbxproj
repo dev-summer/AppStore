@@ -64,6 +64,7 @@
 		57788C3E2A5C54BA0031C5F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */; };
 		57788C422A5C6A9E0031C5F2 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57788C412A5C6A9E0031C5F2 /* UIViewController+Alert.swift */; };
 		57ED1EE62A5E8D5100BEFD28 /* DetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */; };
+		57ED1EE82A5EA06B00BEFD28 /* DetailTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		57788C412A5C6A9E0031C5F2 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItem.swift; sourceTree = "<group>"; };
+		57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +393,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		57684BE32A6BE602008AB8C9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		57788BDA2A52EDF30031C5F2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +540,7 @@
 		57788C3C2A5C54B00031C5F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57684BE32A6BE602008AB8C9 /* Cells */,
 				57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */,
 			);
 			path = View;
@@ -689,6 +700,7 @@
 				57788C192A57E7280031C5F2 /* UIFont+Weight.swift in Sources */,
 				57788C3E2A5C54BA0031C5F2 /* DetailViewController.swift in Sources */,
 				57788BF92A53F4CC0031C5F2 /* SearchAppUseCase.swift in Sources */,
+				57ED1EE82A5EA06B00BEFD28 /* DetailTopCell.swift in Sources */,
 				5725762C2A52843C0099BE23 /* Endpoint.swift in Sources */,
 				57788C2A2A5844540031C5F2 /* TodayListCell.swift in Sources */,
 				572576B62A52D5170099BE23 /* AppsPage.swift in Sources */,
