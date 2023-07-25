@@ -8,16 +8,18 @@
 import UIKit
 
 enum DetailItem: Hashable {
-    case top(DetailTopItemModel)
-    case summary(DetailSummaryItemModel)
-    case screenshot(DetailScreenshotItemModel)
-    case description(DetailDescriptionItemModel)
+    case top(DetailTopItem)
+    case summary(DetailSummaryItem)
+    case screenshot(DetailScreenshotItem)
+    case description(DetailDescriptionItem)
 //    case rating
-    case releaseNote(DetailReleaseNotesItemModel)
-    case information(DetailInformationItemModel)
+    case releaseNote(DetailReleaseNotesItem)
+    case information(DetailInformationItem)
 }
 
-final class DetailTopItemModel {
+// MARK: - Top Item Model
+
+final class DetailTopItem {
     private enum Namespace {
         static let free: String = "GET"
     }
@@ -42,8 +44,8 @@ final class DetailTopItemModel {
     }
 }
 
-extension DetailTopItemModel: Hashable {
-    static func == (lhs: DetailTopItemModel, rhs: DetailTopItemModel) -> Bool {
+extension DetailTopItem: Hashable {
+    static func == (lhs: DetailTopItem, rhs: DetailTopItem) -> Bool {
         return lhs.appName == rhs.appName
     }
 
@@ -53,6 +55,8 @@ extension DetailTopItemModel: Hashable {
     }
 }
 
+// MARK: - Summary Item Model
+
 enum DetailSummaryItemType {
     case ratings
     case age
@@ -60,16 +64,18 @@ enum DetailSummaryItemType {
     case language
 }
 
-struct DetailSummaryItemModel {
+struct DetailSummaryItem {
     let topLabelText: String?
     let middleLabelText: String?
     let bottomLabelText: String?
     let type: DetailSummaryItemType
 }
 
-extension DetailSummaryItemModel: Hashable { }
+extension DetailSummaryItem: Hashable { }
 
-final class DetailScreenshotItemModel {
+// MARK: - Screenshot Item Model
+
+final class DetailScreenshotItem {
     let screenshotURL: String
     var imageDataDelivered: ((Data) -> Void)?
     
@@ -84,8 +90,8 @@ final class DetailScreenshotItemModel {
     }
 }
 
-extension DetailScreenshotItemModel: Hashable {
-    static func == (lhs: DetailScreenshotItemModel, rhs: DetailScreenshotItemModel) -> Bool {
+extension DetailScreenshotItem: Hashable {
+    static func == (lhs: DetailScreenshotItem, rhs: DetailScreenshotItem) -> Bool {
         return lhs.screenshotURL == rhs.screenshotURL
     }
     
@@ -94,22 +100,28 @@ extension DetailScreenshotItemModel: Hashable {
     }
 }
 
-struct DetailDescriptionItemModel {
+// MARK: - Description Item Model
+
+struct DetailDescriptionItem {
     let description: String
 }
 
-extension DetailDescriptionItemModel: Hashable { }
+extension DetailDescriptionItem: Hashable { }
 
-struct DetailReleaseNotesItemModel {
+// MARK: - Release Notes Item Model
+
+struct DetailReleaseNotesItem {
     let currentVersion: String
     let releaseNotes: String
 }
 
-extension DetailReleaseNotesItemModel: Hashable { }
+extension DetailReleaseNotesItem: Hashable { }
 
-struct DetailInformationItemModel {
+// MARK: - Information Item Model
+
+struct DetailInformationItem {
     let itemName: String
     let itemInformation: String
 }
 
-extension DetailInformationItemModel: Hashable { }
+extension DetailInformationItem: Hashable { }

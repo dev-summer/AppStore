@@ -33,7 +33,7 @@ final class DetailInformationCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(with viewModel: DetailInformationItemModel) {
+    func bind(with viewModel: DetailInformationItem) {
         itemNameLabel.text = viewModel.itemName
         itemInformationLabel.text = viewModel.itemInformation
     }

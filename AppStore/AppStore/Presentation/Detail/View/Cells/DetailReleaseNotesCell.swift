@@ -34,7 +34,7 @@ final class DetailReleaseNotesCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(with viewModel: DetailReleaseNotesItemModel) {
+    func bind(with viewModel: DetailReleaseNotesItem) {
         versionLabel.text = viewModel.currentVersion
         releaseNotesTextView.text = viewModel.releaseNotes
     }

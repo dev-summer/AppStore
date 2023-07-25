@@ -24,31 +24,31 @@ final class DetailViewModel {
     }
     
     private func appendTopItem() {
-        let topItem = DetailTopItemModel(app: app)
+        let topItem = DetailTopItem(app: app)
         items.append((section: .top, item: .top(topItem)))
     }
     
     private func appendSummaryItems() {
-        let summaryItems: [DetailSummaryItemModel] = [
-            DetailSummaryItemModel(
+        let summaryItems: [DetailSummaryItem] = [
+            DetailSummaryItem(
                 topLabelText: app.userRatingCount.shortenedText + " RATINGS",
                 middleLabelText: String(format: "%.1f", app.averageUserRating),
                 bottomLabelText: nil,
                 type: .ratings
             ),
-            DetailSummaryItemModel(
+            DetailSummaryItem(
                 topLabelText: "AGE",
                 middleLabelText: app.contentAdvisoryRating,
                 bottomLabelText: "Years Old",
                 type: .age
             ),
-            DetailSummaryItemModel(
+            DetailSummaryItem(
                 topLabelText: "DEVELOPER",
                 middleLabelText: nil,
                 bottomLabelText: app.developerName,
                 type: .developer
             ),
-            DetailSummaryItemModel(
+            DetailSummaryItem(
                 topLabelText: "LANGUAGE",
                 middleLabelText: app.languageCodesISO2A.first,
                 bottomLabelText: (app.languageCodesISO2A.count - 1).languageCodeCount,
@@ -59,28 +59,28 @@ final class DetailViewModel {
     }
     
     private func appendScreenshotItems() {
-        let screenshotItems: [DetailScreenshotItemModel] = app.screenshotURLs.map { DetailScreenshotItemModel(screenshotURL: $0) }
+        let screenshotItems: [DetailScreenshotItem] = app.screenshotURLs.map { DetailScreenshotItem(screenshotURL: $0) }
         screenshotItems.forEach { items.append((section: .screenshot, item: .screenshot($0))) }
     }
     
     private func appendDescriptionItem() {
-        let descriptionItem = DetailDescriptionItemModel(description: app.description)
+        let descriptionItem = DetailDescriptionItem(description: app.description)
         items.append((section: .description, item: .description(descriptionItem)))
     }
     
     private func appendReleaseNotesItem() {
         guard let releaseNotes = app.releaseNotes,
               releaseNotes != "" else { return }
-        let releaseNotesItem = DetailReleaseNotesItemModel(currentVersion: app.version, releaseNotes: releaseNotes)
+        let releaseNotesItem = DetailReleaseNotesItem(currentVersion: app.version, releaseNotes: releaseNotes)
         items.append((section: .releaseNote, item: .releaseNote(releaseNotesItem)))
     }
     
     private func appendInformationItemModel() {
-        let informationItems: [DetailInformationItemModel] = [
-            DetailInformationItemModel(itemName: "Provider", itemInformation: app.providerName),
-            DetailInformationItemModel(itemName: "Size", itemInformation: app.fileSizeBytes),
-            DetailInformationItemModel(itemName: "Category", itemInformation: app.appCategory),
-            DetailInformationItemModel(itemName: "Compatibility", itemInformation: app.minimumOSVersion)
+        let informationItems: [DetailInformationItem] = [
+            DetailInformationItem(itemName: "Provider", itemInformation: app.providerName),
+            DetailInformationItem(itemName: "Size", itemInformation: app.fileSizeBytes),
+            DetailInformationItem(itemName: "Category", itemInformation: app.appCategory),
+            DetailInformationItem(itemName: "Compatibility", itemInformation: app.minimumOSVersion)
         ]
         informationItems.forEach { items.append((section: .information, item: .information($0))) }
     }

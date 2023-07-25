@@ -33,7 +33,7 @@ final class DetailScreenshotCell: UICollectionViewCell {
         imageView.image = nil
     }
     
-    func bind(with viewModel: DetailScreenshotItemModel) {
+    func bind(with viewModel: DetailScreenshotItem) {
         viewModel.imageDataDelivered = { [weak self] data in
             DispatchQueue.main.async {
                 let image = UIImage(data: data)

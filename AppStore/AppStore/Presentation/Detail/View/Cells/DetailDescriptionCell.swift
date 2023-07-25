@@ -27,7 +27,7 @@ final class DetailDescriptionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(with viewModel: DetailDescriptionItemModel) {
+    func bind(with viewModel: DetailDescriptionItem) {
         textView.text = viewModel.description
     }
     

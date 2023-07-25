@@ -62,7 +62,7 @@ final class DetailSummaryCell: UICollectionViewCell {
         middleIconImageView.isHidden = true
     }
     
-    func bind(with viewModel: DetailSummaryItemModel) {
+    func bind(with viewModel: DetailSummaryItem) {
         topLabel.text = viewModel.topLabelText
         middleLabel.text = viewModel.middleLabelText
         bottomLabel.text = viewModel.bottomLabelText

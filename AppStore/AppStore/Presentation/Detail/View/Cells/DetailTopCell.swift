@@ -65,7 +65,7 @@ final class DetailTopCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(with item: DetailTopItemModel) {
+    func bind(with item: DetailTopItem) {
         item.imageDataDelivered = { [weak self] data in
             self?.fillImage(with: data)
         }
@@ -123,7 +123,7 @@ final class DetailTopCell: UICollectionViewCell {
         }
     }
     
-    private func configureContents(with item: DetailTopItemModel) {
+    private func configureContents(with item: DetailTopItem) {
         appTitleLabel.text = item.appName
         appCategoryLabel.text = item.appCategory
         priceButton.setTitle(item.price, for: .normal)
