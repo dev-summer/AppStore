@@ -97,8 +97,8 @@ final class AppInfoView: UIView {
         NSLayoutConstraint.activate([
             priceButton.leadingAnchor.constraint(equalTo: appTitleLabel.trailingAnchor, constant: 12),
             priceButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            priceButton.heightAnchor.constraint(equalToConstant: 32),
             priceButton.widthAnchor.constraint(equalToConstant: 80),
+            priceButton.heightAnchor.constraint(equalToConstant: 32),
             priceButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
