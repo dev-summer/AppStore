@@ -74,34 +74,34 @@ final class DetailSummaryCell: UICollectionViewCell {
     }
     
     private func configureHierarchy() {
-        [topLabel, middleLabel, middleIconImageView, bottomLabel].forEach { addSubview($0) }
+        [topLabel, middleLabel, middleIconImageView, bottomLabel].forEach { contentView.addSubview($0) }
     }
     
     private func configureConstraints() {
         topLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            topLabel.topAnchor.constraint(equalTo: topAnchor),
-            topLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            topLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            topLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
         middleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            middleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            middleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            middleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            middleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
         
         middleIconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            middleIconImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            middleIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            middleIconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            middleIconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             middleIconImageView.widthAnchor.constraint(equalToConstant: 24),
             middleIconImageView.heightAnchor.constraint(equalTo: middleIconImageView.widthAnchor)
         ])
         
         bottomLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            bottomLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bottomLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            bottomLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            bottomLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
 }

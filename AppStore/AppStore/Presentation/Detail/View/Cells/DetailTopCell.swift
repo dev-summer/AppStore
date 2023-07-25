@@ -80,17 +80,17 @@ final class DetailTopCell: UICollectionViewCell {
     private func configureConstraints() {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iconImageView.topAnchor.constraint(equalTo: topAnchor),
-            iconImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor)
         ])
         
         appTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            appTitleLabel.topAnchor.constraint(equalTo: topAnchor),
+            appTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             appTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
-            appTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+            appTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         appCategoryLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,7 @@ final class DetailTopCell: UICollectionViewCell {
         
         priceButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            priceButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            priceButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             priceButton.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
             priceButton.widthAnchor.constraint(equalToConstant: 80),
             priceButton.heightAnchor.constraint(equalToConstant: 32)
@@ -109,8 +109,8 @@ final class DetailTopCell: UICollectionViewCell {
         
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            shareButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            shareButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            shareButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            shareButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             shareButton.widthAnchor.constraint(equalToConstant: 32),
             shareButton.heightAnchor.constraint(equalTo: shareButton.widthAnchor)
         ])
