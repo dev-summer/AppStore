@@ -69,6 +69,7 @@
 		57FE15902A668298009AEC6E /* DetailScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */; };
 		57FE15922A6682BB009AEC6E /* DetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */; };
 		57FE15942A6682D2009AEC6E /* DetailReleaseNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */; };
+		57FE15962A6682F6009AEC6E /* DetailInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15952A6682F6009AEC6E /* DetailInformationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenshotCell.swift; sourceTree = "<group>"; };
 		57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionCell.swift; sourceTree = "<group>"; };
 		57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReleaseNotesCell.swift; sourceTree = "<group>"; };
+		57FE15952A6682F6009AEC6E /* DetailInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +410,7 @@
 				57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */,
 				57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */,
 				57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */,
+				57FE15952A6682F6009AEC6E /* DetailInformationCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 			files = (
 				572576AD2A52D3890099BE23 /* TodayItem.swift in Sources */,
 				57788C1E2A57F0B20031C5F2 /* DateFormatter+shared.swift in Sources */,
+				57FE15962A6682F6009AEC6E /* DetailInformationCell.swift in Sources */,
 				5725762A2A5153FC0099BE23 /* HTTPMethod.swift in Sources */,
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
 				57788C1C2A57E7A40031C5F2 /* LayoutHeaderView.swift in Sources */,
