@@ -66,6 +66,7 @@
 		57ED1EE62A5E8D5100BEFD28 /* DetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */; };
 		57ED1EE82A5EA06B00BEFD28 /* DetailTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */; };
 		57FE158E2A668128009AEC6E /* DetailSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */; };
+		57FE15902A668298009AEC6E /* DetailScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItem.swift; sourceTree = "<group>"; };
 		57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopCell.swift; sourceTree = "<group>"; };
 		57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSummaryCell.swift; sourceTree = "<group>"; };
+		57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenshotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +402,7 @@
 			children = (
 				57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */,
 				57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */,
+				57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				572576A42A52D0DD0099BE23 /* RootTabBarController.swift in Sources */,
 				57788C1C2A57E7A40031C5F2 /* LayoutHeaderView.swift in Sources */,
 				57788C0E2A5525610031C5F2 /* ImageManager.swift in Sources */,
+				57FE15902A668298009AEC6E /* DetailScreenshotCell.swift in Sources */,
 				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
