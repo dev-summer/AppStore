@@ -70,6 +70,7 @@
 		57FE15922A6682BB009AEC6E /* DetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */; };
 		57FE15942A6682D2009AEC6E /* DetailReleaseNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */; };
 		57FE15962A6682F6009AEC6E /* DetailInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15952A6682F6009AEC6E /* DetailInformationCell.swift */; };
+		57FE15982A67C636009AEC6E /* LineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15972A67C636009AEC6E /* LineHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionCell.swift; sourceTree = "<group>"; };
 		57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReleaseNotesCell.swift; sourceTree = "<group>"; };
 		57FE15952A6682F6009AEC6E /* DetailInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationCell.swift; sourceTree = "<group>"; };
+		57FE15972A67C636009AEC6E /* LineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +558,7 @@
 			children = (
 				57684BE32A6BE602008AB8C9 /* Cells */,
 				57788C3D2A5C54BA0031C5F2 /* DetailViewController.swift */,
+				57FE15972A67C636009AEC6E /* LineHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				572576B22A52D44B0099BE23 /* App.swift in Sources */,
 				5725769B2A52C8A90099BE23 /* SearchRequestDTO.swift in Sources */,
 				572576902A52C65C0099BE23 /* AppStoreAPIEndpoint.swift in Sources */,
+				57FE15982A67C636009AEC6E /* LineHeaderView.swift in Sources */,
 				57788C222A5801F50031C5F2 /* TodayLargeCell.swift in Sources */,
 				57788C242A5805070031C5F2 /* SectionBackgroundView.swift in Sources */,
 				57788C422A5C6A9E0031C5F2 /* UIViewController+Alert.swift in Sources */,
