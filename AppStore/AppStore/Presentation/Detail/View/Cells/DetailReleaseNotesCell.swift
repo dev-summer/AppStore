@@ -19,7 +19,7 @@ final class DetailReleaseNotesCell: UICollectionViewCell {
     
     private let releaseNotesTextView: UITextView = {
         let textView = UITextView()
-        textView.font = .preferredFont(forTextStyle: .body)
+        textView.font = .preferredFont(forTextStyle: .caption1)
         textView.isScrollEnabled = false
         return textView
     }()
@@ -47,7 +47,8 @@ final class DetailReleaseNotesCell: UICollectionViewCell {
         versionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             versionLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            versionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            versionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            versionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         releaseNotesTextView.translatesAutoresizingMaskIntoConstraints = false
