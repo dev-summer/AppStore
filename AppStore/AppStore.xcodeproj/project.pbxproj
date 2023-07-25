@@ -352,8 +352,8 @@
 				57788C312A5C37B10031C5F2 /* AppList */,
 				572576A82A52D34A0099BE23 /* View */,
 				572576A92A52D3500099BE23 /* ViewModel */,
-				572576AC2A52D3890099BE23 /* TodayItem.swift */,
 				57788C2B2A5965140031C5F2 /* TodaySection.swift */,
+				572576AC2A52D3890099BE23 /* TodayItem.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -541,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				57684BE72A6FFF60008AB8C9 /* DetailSection.swift */,
+				57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */,
 				57788C3C2A5C54B00031C5F2 /* View */,
 				57788C362A5C39BA0031C5F2 /* ViewModel */,
 			);
@@ -558,7 +559,6 @@
 		57788C362A5C39BA0031C5F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				57ED1EE52A5E8D5100BEFD28 /* DetailItem.swift */,
 				57FE15872A654635009AEC6E /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
