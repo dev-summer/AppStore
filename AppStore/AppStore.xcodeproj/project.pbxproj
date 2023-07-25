@@ -68,6 +68,7 @@
 		57FE158E2A668128009AEC6E /* DetailSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */; };
 		57FE15902A668298009AEC6E /* DetailScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */; };
 		57FE15922A6682BB009AEC6E /* DetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */; };
+		57FE15942A6682D2009AEC6E /* DetailReleaseNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSummaryCell.swift; sourceTree = "<group>"; };
 		57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenshotCell.swift; sourceTree = "<group>"; };
 		57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionCell.swift; sourceTree = "<group>"; };
+		57FE15932A6682D2009AEC6E /* DetailReleaseNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReleaseNotesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -692,6 +694,7 @@
 				57788C242A5805070031C5F2 /* SectionBackgroundView.swift in Sources */,
 				57788C422A5C6A9E0031C5F2 /* UIViewController+Alert.swift in Sources */,
 				572576A72A52D2160099BE23 /* TodayViewController.swift in Sources */,
+				57FE15942A6682D2009AEC6E /* DetailReleaseNotesCell.swift in Sources */,
 				572576992A52C8800099BE23 /* SearchEndpoint.swift in Sources */,
 				572576922A52C71C0099BE23 /* LookUpEndpoint.swift in Sources */,
 				572576322A5299E50099BE23 /* NetworkService.swift in Sources */,
