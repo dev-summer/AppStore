@@ -67,6 +67,7 @@
 		57ED1EE82A5EA06B00BEFD28 /* DetailTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */; };
 		57FE158E2A668128009AEC6E /* DetailSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */; };
 		57FE15902A668298009AEC6E /* DetailScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */; };
+		57FE15922A6682BB009AEC6E /* DetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopCell.swift; sourceTree = "<group>"; };
 		57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSummaryCell.swift; sourceTree = "<group>"; };
 		57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenshotCell.swift; sourceTree = "<group>"; };
+		57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +405,7 @@
 				57ED1EE72A5EA06B00BEFD28 /* DetailTopCell.swift */,
 				57FE158D2A668128009AEC6E /* DetailSummaryCell.swift */,
 				57FE158F2A668298009AEC6E /* DetailScreenshotCell.swift */,
+				57FE15912A6682BB009AEC6E /* DetailDescriptionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				57788C2C2A5965140031C5F2 /* TodaySection.swift in Sources */,
 				57788C282A582FA10031C5F2 /* AppInfoViewModel.swift in Sources */,
 				57788C262A582F910031C5F2 /* AppInfoView.swift in Sources */,
+				57FE15922A6682BB009AEC6E /* DetailDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
