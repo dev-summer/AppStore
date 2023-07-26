@@ -23,7 +23,7 @@ extension DetailLayoutSection {
 
 struct DetailTopSection: DetailLayoutSection {
     func section(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(120))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let group = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
