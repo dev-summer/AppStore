@@ -48,11 +48,13 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind(with: viewModel)
         configureHierarchy()
         configureConstraints()
         configureViewController()
         configureCollectionView()
-        bind(with: viewModel)
+        applyData(with: viewModel)
+
     }
     
     private func bind(with viewModel: DetailViewModel) {
@@ -60,21 +62,6 @@ final class DetailViewController: UIViewController {
             self?.configureNavigationBar(with: data)
         }
         viewModel.fetchIconImage()
-        applyData(with: viewModel)
-    }
-    
-    private func applyData(with viewModel: DetailViewModel) {
-        var snapshot = Snapshot()
-        let sections = DetailSection.allCases.filter { $0.isValid(for: viewModel.app) }
-        snapshot.appendSections(sections)
-        viewModel.items.forEach { snapshot.appendItems([$0.item], toSection: $0.section) }
-        dataSource?.apply(snapshot, animatingDifferences: false)
-    }
-    
-    private func configureViewController() {
-        collectionView.delegate = self
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.isHidden = false
     }
     
     private func configureNavigationBar(with data: Data) {
@@ -85,7 +72,7 @@ final class DetailViewController: UIViewController {
             self.navigationItem.titleView?.isHidden = true
         }
     }
-    
+
     private func configureHierarchy() {
         view.addSubview(collectionView)
     }
@@ -104,6 +91,12 @@ final class DetailViewController: UIViewController {
             iconImageView.heightAnchor.constraint(equalToConstant: 32),
             iconImageView.widthAnchor.constraint(equalToConstant: 32)
         ])
+    }
+    
+    private func configureViewController() {
+        collectionView.delegate = self
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - CollectionView
@@ -162,6 +155,14 @@ final class DetailViewController: UIViewController {
             return self?.sections[indexPath.section]
                     .cell(collectionView: collectionView, indexPath: indexPath, item: item)
         })
+    }
+    
+    private func applyData(with viewModel: DetailViewModel) {
+        var snapshot = Snapshot()
+        let sections = DetailSection.allCases.filter { $0.isValid(for: viewModel.app) }
+        snapshot.appendSections(sections)
+        viewModel.items.forEach { snapshot.appendItems([$0.item], toSection: $0.section) }
+        dataSource?.apply(snapshot, animatingDifferences: false)
     }
 }
 
