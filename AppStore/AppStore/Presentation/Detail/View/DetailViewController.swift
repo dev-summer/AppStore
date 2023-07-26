@@ -28,6 +28,15 @@ final class DetailViewController: UIViewController {
         return collectionView
     }()
     
+    private let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 8
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .systemGray
+        return imageView
+    }()
+
     init(app: App) {
         self.viewModel = DetailViewModel(app: app)
         super.init(nibName: nil, bundle: nil)
@@ -43,10 +52,18 @@ final class DetailViewController: UIViewController {
         configureConstraints()
         configureViewController()
         configureCollectionView()
-        applyData(from: viewModel)
+        bind(with: viewModel)
     }
     
-    private func applyData(from viewModel: DetailViewModel) {
+    private func bind(with viewModel: DetailViewModel) {
+        viewModel.imageDataDelivered = { [weak self] data in
+            self?.configureNavigationBar(with: data)
+        }
+        viewModel.fetchIconImage()
+        applyData(with: viewModel)
+    }
+    
+    private func applyData(with viewModel: DetailViewModel) {
         var snapshot = Snapshot()
         let sections = DetailSection.allCases.filter { $0.isValid(for: viewModel.app) }
         snapshot.appendSections(sections)
@@ -56,6 +73,15 @@ final class DetailViewController: UIViewController {
     
     private func configureViewController() {
         view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func configureNavigationBar(with data: Data) {
+        DispatchQueue.main.async {
+            let image = UIImage(data: data)
+            self.iconImageView.image = image
+            self.navigationItem.titleView = self.iconImageView
+        }
     }
     
     private func configureHierarchy() {
@@ -69,6 +95,12 @@ final class DetailViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            iconImageView.heightAnchor.constraint(equalToConstant: 32),
+            iconImageView.widthAnchor.constraint(equalToConstant: 32)
         ])
     }
     
