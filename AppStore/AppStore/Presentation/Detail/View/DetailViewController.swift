@@ -72,6 +72,7 @@ final class DetailViewController: UIViewController {
     }
     
     private func configureViewController() {
+        collectionView.delegate = self
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = false
     }
@@ -81,6 +82,7 @@ final class DetailViewController: UIViewController {
             let image = UIImage(data: data)
             self.iconImageView.image = image
             self.navigationItem.titleView = self.iconImageView
+            self.navigationItem.titleView?.isHidden = true
         }
     }
     
@@ -160,5 +162,18 @@ final class DetailViewController: UIViewController {
             return self?.sections[indexPath.section]
                     .cell(collectionView: collectionView, indexPath: indexPath, item: item)
         })
+    }
+}
+
+extension DetailViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let targetHeight: CGFloat = 40
+        let offset: CGFloat = scrollView.contentOffset.y
+
+        if offset < targetHeight {
+            self.navigationItem.titleView?.isHidden = true
+        } else {
+            self.navigationItem.titleView?.isHidden = false
+        }
     }
 }
