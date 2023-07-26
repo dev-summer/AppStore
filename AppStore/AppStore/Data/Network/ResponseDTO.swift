@@ -19,7 +19,7 @@ struct AppResponse: Decodable {
     let appCategory: String
     let price: Double
     let formattedPrice: String
-    let userRatingCount: Int
+    let userRatingCount: Double
     let averageUserRating: Double
     let screenshotURLs: [String]
     let contentAdvisoryRating: String
@@ -28,8 +28,8 @@ struct AppResponse: Decodable {
     let description: String
     let releaseNotes: String?
     let version: String
-    let categories: [String]
     let providerName: String
+    let developerName: String
     let minimumOSVersion: String
     
     private enum CodingKeys: String, CodingKey {
@@ -48,13 +48,13 @@ struct AppResponse: Decodable {
         case description
         case releaseNotes
         case version
-        case categories = "genres"
         case providerName = "sellerName"
+        case developerName = "artistName"
         case minimumOSVersion = "minimumOsVersion"
     }
 }
 
-// MARK: - Mapping to Domain
+// MARK: Mapping to Domain
 
 extension ResponseDTO {
     func toAppsPage() -> AppsPage {
@@ -83,8 +83,8 @@ extension AppResponse {
             description: self.description,
             releaseNotes: self.releaseNotes,
             version: self.version,
-            categories: self.categories,
             providerName: self.providerName,
+            developerName: self.developerName,
             minimumOSVersion: self.minimumOSVersion
         )
     }

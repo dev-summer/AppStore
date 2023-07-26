@@ -8,8 +8,6 @@
 import UIKit
 
 final class TodayListCell: UICollectionViewCell {
-    static var identifier: String { return String(describing: self) }
-    
     private let infoView: AppInfoView = AppInfoView()
     
     override init(frame: CGRect) {

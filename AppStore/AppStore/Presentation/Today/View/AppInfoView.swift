@@ -88,7 +88,7 @@ final class AppInfoView: UIView {
         
         appCategoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            appCategoryLabel.topAnchor.constraint(equalTo: appTitleLabel.bottomAnchor, constant: 4),
+            appCategoryLabel.topAnchor.constraint(equalTo: appTitleLabel.bottomAnchor),
             appCategoryLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             appCategoryLabel.leadingAnchor.constraint(equalTo: appTitleLabel.leadingAnchor)
         ])
@@ -97,8 +97,8 @@ final class AppInfoView: UIView {
         NSLayoutConstraint.activate([
             priceButton.leadingAnchor.constraint(equalTo: appTitleLabel.trailingAnchor, constant: 12),
             priceButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            priceButton.heightAnchor.constraint(equalToConstant: 32),
             priceButton.widthAnchor.constraint(equalToConstant: 80),
+            priceButton.heightAnchor.constraint(equalToConstant: 32),
             priceButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }

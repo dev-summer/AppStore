@@ -14,8 +14,8 @@ final class AppListViewController: UIViewController {
         static let buttonBackground: String = "circle.fill"
     }
     
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, TodayItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<TodaySection, TodayItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<TodaySection, TodayItem>
     
     private let viewModel: AppListViewModel
     private var dataSource: DataSource?
@@ -51,19 +51,28 @@ final class AppListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         configureHierarchy()
         configureConstraints()
         configureViewController()
         configureCollectionView()
         configureCloseButtonAction()
-        bind()
         viewModel.fetchAppList()
     }
     
-    private func configureViewController() {
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.modalPresentationCapturesStatusBarAppearance = true
+    private func bind() {
+        viewModel.appsDelivered = { [weak self] items in
+            var snapshot = Snapshot()
+            snapshot.appendSections([.list])
+            snapshot.appendItems(items, toSection: .list)
+            self?.dataSource?.apply(snapshot, animatingDifferences: false)
+        }
+        viewModel.cellTapped = { [weak self] app in
+            self?.showAppDetail(with: app)
+        }
+        viewModel.errorDelivered = { [weak self] message in
+            self?.showErrorAlert(with: message)
+        }
     }
     
     private func configureHierarchy() {
@@ -73,10 +82,10 @@ final class AppListViewController: UIViewController {
     private func configureConstraints() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +96,14 @@ final class AppListViewController: UIViewController {
             closeButton.heightAnchor.constraint(equalTo: closeButton.widthAnchor)
         ])
     }
+    
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.modalPresentationCapturesStatusBarAppearance = true
+    }
+    
+    // MARK: - CollectionView
     
     private func configureCollectionView() {
         collectionView.delegate = self
@@ -102,6 +119,7 @@ final class AppListViewController: UIViewController {
             let header = self.createSectionHeaderItem()
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: environment)
             section.boundarySupplementaryItems = [header]
+            section.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
             
             return section
         }
@@ -109,19 +127,7 @@ final class AppListViewController: UIViewController {
         return layout
     }
     
-    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .topLeading
-        )
-        
-        return header
-    }
+    // MARK: Supplementary Items
     
     private func registerSupplementaryViews() {
         collectionView.register(
@@ -137,6 +143,21 @@ final class AppListViewController: UIViewController {
         }
     }
     
+    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(60)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .topLeading
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        
+        return header
+    }
+    
     private func createSectionHeaderView(_ indexPath: IndexPath) -> SectionHeaderView? {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
@@ -148,6 +169,8 @@ final class AppListViewController: UIViewController {
         
         return header
     }
+    
+    // MARK: DataSource
     
     private func configureDataSource() {
         let listCellRegistration = UICollectionView.CellRegistration<TodayListCell, TodayItem> { cell, _, item in
@@ -165,6 +188,8 @@ final class AppListViewController: UIViewController {
             })
     }
     
+    // MARK: - Button Action
+    
     private func configureCloseButtonAction() {
         let action = UIAction { _ in
             self.dismiss(animated: true)
@@ -172,34 +197,27 @@ final class AppListViewController: UIViewController {
         closeButton.addAction(action, for: .allTouchEvents)
     }
     
-    private func bind() {
-        viewModel.appsDelivered = { [weak self] items in
-            var snapshot = Snapshot()
-            snapshot.appendSections([.list])
-            snapshot.appendItems(items, toSection: .list)
-            self?.dataSource?.apply(snapshot, animatingDifferences: false)
-        }
-        viewModel.cellTapped = { [weak self] viewModel in
-            self?.showAppDetail(with: viewModel)
-        }
-        viewModel.errorDelivered = { [weak self] message in
-            self?.showErrorAlert(with: message)
+    // MARK: - Cell Tap Action
+    
+    private func showAppDetail(with app: App) {
+        DispatchQueue.main.async {
+            let detailViewController = DetailViewController(app: app)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
     
-    private func showAppDetail(with appID: Int) {
-        let detailViewController = DetailViewController(appID: appID)
-        navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
-    private func showErrorAlert(with message: String) {
-        let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] _ in
-            self?.dismiss(animated: true)
+    private func showErrorAlert(with message: String?) {
+        DispatchQueue.main.async {
+            let action = UIAlertAction(title: Namespace.confirm, style: .default) { [weak self] _ in
+                self?.dismiss(animated: true)
+            }
+            let alert = self.createAlert(with: message ?? .init(), action: action)
+            self.present(alert, animated: true)
         }
-        let alert = createAlert(with: message, action: action)
-        present(alert, animated: true)
     }
 }
+
+// MARK: - Delegate Methods
 
 extension AppListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -207,6 +225,8 @@ extension AppListViewController: UICollectionViewDelegate {
         viewModel.didTapCell(with: item)
     }
 }
+
+// MARK: - Status Bar
 
 extension AppListViewController {
     override var prefersStatusBarHidden: Bool {

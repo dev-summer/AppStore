@@ -12,7 +12,7 @@ struct App {
     let appCategory: String
     let price: Double
     let formattedPrice: String
-    let userRatingCount: Int
+    let userRatingCount: Double
     let averageUserRating: Double
     let screenshotURLs: [String]
     let contentAdvisoryRating: String
@@ -21,7 +21,7 @@ struct App {
     let description: String
     let releaseNotes: String?
     let version: String
-    let categories: [String]
     let providerName: String
+    let developerName: String
     let minimumOSVersion: String
 }

@@ -8,8 +8,8 @@
 import UIKit
 
 final class TodayViewController: UIViewController {
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TodayItem>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, TodayItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<TodaySection, TodayItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<TodaySection, TodayItem>
     typealias LargeCellRegistration = UICollectionView.CellRegistration<TodayLargeCell, TodayItem>
     typealias ListCellRegistration = UICollectionView.CellRegistration<TodayListCell, TodayItem>
     
@@ -32,16 +32,35 @@ final class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         configureHierarchy()
         configureConstraints()
+        configureViewController()
         configureCollectionView()
-        configureNavigationBar()
-        bind()
         viewModel.fetchApps()
     }
-    
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
+
+    private func bind() {
+        viewModel.appsDelivered = { [weak self] apps in
+            var snapshot = Snapshot()
+            snapshot.appendSections(TodaySection.allCases)
+            snapshot.appendItems(apps[.large] ?? [], toSection: .large)
+            snapshot.appendItems(apps[.list] ?? [], toSection: .list)
+            self?.dataSource?.apply(snapshot, animatingDifferences: false)
+        }
+        viewModel.largeSectionTapped = { [weak self] appID in
+            self?.showAppDetail(with: appID)
+        }
+        viewModel.listSectionTapped = { [weak self] keyword in
+            self?.showAppListWith(
+                keyword: keyword,
+                title: Namespace.sectionHeaderTitle,
+                description: Namespace.sectionHeaderDescription
+            )
+        }
+        viewModel.errorDelivered = { [weak self] message in
+            self?.showErrorAlert(with: message)
+        }
     }
     
     private func configureHierarchy() {
@@ -58,6 +77,13 @@ final class TodayViewController: UIViewController {
         ])
     }
     
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    // MARK: - CollectionView
+    
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.collectionViewLayout = createCollectionViewLayout()
@@ -68,7 +94,7 @@ final class TodayViewController: UIViewController {
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
-            let section = Section(rawValue: sectionIndex)
+            let section = TodaySection(rawValue: sectionIndex)
             
             switch section {
             case .large:
@@ -86,6 +112,17 @@ final class TodayViewController: UIViewController {
         return layout
     }
     
+    private func createCollectionViewConfiguration() -> UICollectionViewCompositionalLayoutConfiguration {
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        let header = createLayoutHeaderItem()
+        configuration.interSectionSpacing = 16
+        configuration.boundarySupplementaryItems = [header]
+        
+        return configuration
+    }
+    
+    // MARK: Sections
+    
     private func createLargeCellSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -99,9 +136,7 @@ final class TodayViewController: UIViewController {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 32, bottom: 12, trailing: 32)
-        section.decorationItems = [
-            NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
-        ]
+        section.decorationItems = [createSectionBackground()]
         
         return section
     }
@@ -114,51 +149,12 @@ final class TodayViewController: UIViewController {
         let header = createSectionHeaderItem()
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 32, bottom: 12, trailing: 32)
         section.boundarySupplementaryItems = [header]
-        section.decorationItems = [
-            NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
-        ]
+        section.decorationItems = [createSectionBackground()]
         
         return section
     }
     
-    private func createCollectionViewConfiguration() -> UICollectionViewCompositionalLayoutConfiguration {
-        let configuration = UICollectionViewCompositionalLayoutConfiguration()
-        let header = createLayoutHeaderItem()
-        configuration.interSectionSpacing = 16
-        configuration.boundarySupplementaryItems = [header]
-        
-        return configuration
-    }
-    
-    private func createLayoutHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: Namespace.layoutHeader,
-            alignment: .topLeading
-        )
-        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
-        
-        return header
-    }
-    
-    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(60)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .topLeading
-        )
-        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 32, bottom: .zero, trailing: 32)
-        
-        return header
-    }
+    // MARK: Supplementary & Decoration Items
     
     private func registerSupplementaryViews() {
         collectionView.register(
@@ -182,10 +178,25 @@ final class TodayViewController: UIViewController {
             if kind == Namespace.layoutHeader {
                 return self?.createLayoutHeaderView(indexPath)
             } else {
-                let section = Section(rawValue: indexPath.section)
+                let section = TodaySection(rawValue: indexPath.section)
                 return section == .list ? self?.createSectionHeaderView(indexPath) : nil
             }
         }
+    }
+    
+    private func createLayoutHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(60)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: Namespace.layoutHeader,
+            alignment: .topLeading
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        
+        return header
     }
     
     private func createLayoutHeaderView(_ indexPath: IndexPath) -> LayoutHeaderView? {
@@ -197,6 +208,21 @@ final class TodayViewController: UIViewController {
         
         header.showDate()
         header.setTitle(with: Namespace.layoutHeaderTitle)
+        
+        return header
+    }
+    
+    private func createSectionHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(60)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .topLeading
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 32, bottom: .zero, trailing: 32)
         
         return header
     }
@@ -216,6 +242,15 @@ final class TodayViewController: UIViewController {
         return header
     }
     
+    private func createSectionBackground() -> NSCollectionLayoutDecorationItem {
+        let sectionBackground = NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundView.identifier)
+        sectionBackground.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+        
+        return sectionBackground
+    }
+    
+    // MARK: DataSource
+    
     private func configureDatasource() {
         let largeCellRegistration = LargeCellRegistration { cell, _, item in
             cell.bind(with: item)
@@ -227,7 +262,7 @@ final class TodayViewController: UIViewController {
         dataSource = DataSource(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, item in
-                let section = Section(rawValue: indexPath.section)
+                let section = TodaySection(rawValue: indexPath.section)
                 
                 switch section {
                 case .large:
@@ -248,47 +283,34 @@ final class TodayViewController: UIViewController {
             })
     }
     
-    private func bind() {
-        viewModel.appsDelivered = { [weak self] apps in
-            var snapshot = Snapshot()
-            snapshot.appendSections(Section.allCases)
-            snapshot.appendItems(apps[.large] ?? [], toSection: .large)
-            snapshot.appendItems(apps[.list] ?? [], toSection: .list)
-            self?.dataSource?.apply(snapshot, animatingDifferences: false)
-        }
-        viewModel.largeSectionTapped = { [weak self] appID in
-            self?.showAppDetail(with: appID)
-        }
-        viewModel.listSectionTapped = { [weak self] keyword in
-            self?.showAppListWith(
-                keyword: keyword,
-                title: Namespace.sectionHeaderTitle,
-                description: Namespace.sectionHeaderDescription
-            )
-        }
-        viewModel.errorDelivered = { [weak self] message in
-            self?.showErrorAlert(with: message)
-        }
-    }
+    // MARK: - Cell Tap Actions
     
-    private func showAppDetail(with appID: Int) {
-        let detailViewController = DetailViewController(appID: appID)
-        navigationController?.pushViewController(detailViewController, animated: true)
+    private func showAppDetail(with app: App) {
+        DispatchQueue.main.async {
+            let detailViewController = DetailViewController(app: app)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
     
     private func showAppListWith(keyword: String, title: String, description: String) {
-        let appListViewController = AppListViewController(keyword: keyword, title: title, description: description)
-        let navigationController = UINavigationController(rootViewController: appListViewController)
-        navigationController.modalPresentationStyle = .overFullScreen
-        present(navigationController, animated: true)
+        DispatchQueue.main.async {
+            let appListViewController = AppListViewController(keyword: keyword, title: title, description: description)
+            let navigationController = UINavigationController(rootViewController: appListViewController)
+            navigationController.modalPresentationStyle = .overFullScreen
+            self.present(navigationController, animated: true)
+        }
     }
     
-    private func showErrorAlert(with message: String) {
-        let action = UIAlertAction(title: Namespace.confirm, style: .default)
-        let alert = createAlert(with: message, action: action)
-        present(alert, animated: true)
+    private func showErrorAlert(with message: String?) {
+        DispatchQueue.main.async {
+            let action = UIAlertAction(title: Namespace.confirm, style: .default)
+            let alert = self.createAlert(with: message ?? .init(), action: action)
+            self.present(alert, animated: true)
+        }
     }
 }
+
+// MARK: - Delegate Methods
 
 extension TodayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -297,7 +319,7 @@ extension TodayViewController: UICollectionViewDelegate {
                   let item = dataSource?.itemIdentifier(for: indexPath) else { return }
             viewModel.didTapCellAt(section: section, with: item)
         } else {
-            guard let section = Section(rawValue: indexPath.section),
+            guard let section = TodaySection(rawValue: indexPath.section),
                   let item = dataSource?.itemIdentifier(for: indexPath) else { return }
             viewModel.didTapCellAt(section: section, with: item)
         }
