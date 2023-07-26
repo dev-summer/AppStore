@@ -5,13 +5,23 @@
 //  Created by summercat on 2023/07/17.
 //
 
+import Foundation
+
 final class DetailViewModel {
     let app: App
+    var imageDataDelivered: ((Data) -> Void)?
+
     private(set) var items: [(section: DetailSection, item: DetailItem)] = []
     
     init(app: App) {
         self.app = app
         appendItems()
+    }
+    
+    func fetchIconImage() {
+        ImageManager.retrieveImage(with: app.appIconURL, completion: { data in
+             self.imageDataDelivered?(data)
+        })
     }
     
     private func appendItems() {
