@@ -17,7 +17,8 @@
 
 ### 1️⃣ DiffableDataSource의 ItemIdentifier 타입 정의
 앱 상세화면은 다음과 같이 여러 종류의 section과 item으로 구성되어 있습니다.
-<img src=https://hackmd.io/_uploads/B11g1UMc3.png width="300">
+
+<img width="250" alt="Screenshot 2023-07-17 at 14 16 03" src="https://github.com/dev-summer/AppStore/assets/98260324/51e105b0-944d-4e39-8c72-d337e79c3356">
 
 각 section별로 item의 타입이 다르기 때문에(`TopItem`, `SummaryItem`, `ScreenshotItem`) `DiffableDatasource`의 `ItemIdentifier` 타입으로 Hashable한 특정 구체 타입(예: `TopItem`)을 지정할 수가 없습니다. 이 문제를 해결하기 위해 고려한 방법은 다음의 네 가지입니다.
 
