@@ -16,6 +16,11 @@
 
 ---
 
+### MVVM + Clean Architecture에서의 흐름
+![image](https://github.com/dev-summer/AppStore/assets/98260324/ee2c759e-ff42-4ca5-813f-2f5516b86c7c)
+
+---
+
 ## 고민한 점
 
 ### 1️⃣ DiffableDataSource의 ItemIdentifier 타입 정의
