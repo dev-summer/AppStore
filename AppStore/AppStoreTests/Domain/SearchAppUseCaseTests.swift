@@ -12,12 +12,12 @@ final class SearchAppUseCaseTests: XCTestCase {
     let app = App(
         appID: Int.zero,
         appName: "app",
+        appIconURL: String.init(),
+        appCategory: String.init(),
         price: Double.zero,
         formattedPrice: String.init(),
-        categoryName: String.init(),
-        appIconURL: String.init(),
+        userRatingCount: Double.zero,
         averageUserRating: Double.zero,
-        userRatingCount: Int.zero,
         screenshotURLs: Array.init(),
         contentAdvisoryRating: String.init(),
         languageCodesISO2A: Array.init(),
@@ -25,8 +25,8 @@ final class SearchAppUseCaseTests: XCTestCase {
         description: String.init(),
         releaseNotes: nil,
         version: String.init(),
-        categories: Array.init(),
         providerName: String.init(),
+        developerName: String.init(),
         minimumOSVersion: String.init()
     )
     private var sut: SearchAppUseCase!

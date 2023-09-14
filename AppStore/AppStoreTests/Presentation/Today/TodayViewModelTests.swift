@@ -12,12 +12,12 @@ final class TodayViewModelTests: XCTestCase {
     private let app: App = App(
         appID: Int.zero,
         appName: String.init(),
+        appIconURL: String.init(),
+        appCategory: String.init(),
         price: Double.zero,
         formattedPrice: String.init(),
-        categoryName: .init(),
-        appIconURL: String.init(),
+        userRatingCount: Double.zero,
         averageUserRating: Double.zero,
-        userRatingCount: Int.zero,
         screenshotURLs: Array.init(),
         contentAdvisoryRating: String.init(),
         languageCodesISO2A: Array.init(),
@@ -25,8 +25,8 @@ final class TodayViewModelTests: XCTestCase {
         description: String.init(),
         releaseNotes: nil,
         version: String.init(),
-        categories: Array.init(),
         providerName: String.init(),
+        developerName: String.init(),
         minimumOSVersion: String.init()
     )
     private var sut: TodayViewModel!
