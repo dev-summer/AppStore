@@ -3,7 +3,10 @@
 2. [고민한 점](#고민한-점)
 
 ## 프로젝트 소개
-- 애플 앱스토어의 `Today` 탭과 `Search` 탭을 클론코딩한 앱
+- 애플 앱스토어의 `Today`탭과 앱 상세정보 화면을 클론코딩한 앱
+
+### 기술 스택
+- MVVM, Clean Architecture, Unit Test, CompositionalLayout, SwiftLint
 
 ### 개발 환경
 [![Xcode](https://img.shields.io/badge/Xcode-14.2-orange)]() [![iOS](https://img.shields.io/badge/iOS-14.0-blue)]()
@@ -22,14 +25,10 @@
 
 각 section별로 item의 타입이 다르기 때문에(`TopItem`, `SummaryItem`, `ScreenshotItem`) `DiffableDatasource`의 `ItemIdentifier` 타입으로 Hashable한 특정 구체 타입(예: `TopItem`)을 지정할 수가 없습니다. 이 문제를 해결하기 위해 고려한 방법은 다음의 네 가지입니다.
 
-1. **<u>`ItemIdentifer`에 들어갈 타입을 열거형으로 정의⭐️ 선택한 방법</u>**
+1. **<u>`ItemIdentifer`에 들어갈 타입을 열거형으로 정의 ⭐️ 선택한 방법</u>**
 2. `ItemIdentifier`에 들어갈 타입을 `AnyHashable`로 정의
 3. `ItemIdentifier`에 들어갈 타입으로 커스텀 `AnyHashable` 타입을 구현
 4. `DiffableDatasource`를 사용하지 않기
-
-**4번**은 `indexPath` 기반의 접근 방식을 사용하기 때문에 item의 삽입/삭제가 일어날 때 고려해야 할 점이 많아 휴먼 에러가 발생하기 쉽습니다. 위 화면에서는 앱 정보를 단순히 보여주기만 하기 때문에 item의 삽입/삭제가 일어나지 않아 4번을 채택하면 쉽게 해결할 수 있습니다. 하지만 `DiffableDataSource`를 활용해 해당 문제를 해결하는 경험을 쌓고자 4번 방법은 배제하였습니다.
-
-**1번**을 선택한 이유는 `DataSource`에 들어갈 객체의 타입을 가장 strict하게 통제할 수 있기 때문입니다.
 
 1~4번의 구현 방법 및 고려한 내용은 다음과 같습니다.
 
@@ -154,3 +153,12 @@ final class DetailViewController: UIViewController {
     ...
 }
 ```
+
+#### 4. `DiffableDatasource`를 사용하지 않기
+`DiffableDatasource`를 사용하지 않을 경우 `indexPath` 기반의 접근 방식을 사용해야 합니다.
+- 장점: 비교적 구현이 단순하다.
+- 단점: item의 삽입/삭제가 일어날 때 고려해야 할 점이 많아 휴먼 에러가 발생하기 쉽다.
+
+위 화면에서는 앱 정보를 단순히 보여주기만 하기 때문에 item의 삽입/삭제가 일어나지 않아 4번을 채택하면 쉽게 해결할 수 있습니다. 하지만 `DiffableDataSource`를 활용해 해당 문제를 해결하는 경험을 쌓고자 4번 방법은 배제하였습니다.
+
+➡️ 최종적으로는 **1번 `ItemIdentifer`에 들어갈 타입을 열거형으로 정의**를 선택했습니다. 그 이유는 `DataSource`에 들어갈 객체의 타입을 가장 strict하게 통제할 수 있기 때문입니다.
