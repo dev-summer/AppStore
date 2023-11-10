@@ -34,7 +34,10 @@ final class TodayViewModelTests: XCTestCase {
     func test_fetchAppsSuccess() {
         // given
         let expectation = XCTestExpectation(description: "success")
-        let expectedResult: [TodaySection: [TodayItem]] = [.large: [TodayItem(app: app, type: .large)], .list: [TodayItem(app: app, type: .list)]]
+        let expectedResult: [TodaySection: [TodayItem]] = [
+            .large: [TodayItem(app: app, type: .large)],
+            .list: [TodayItem(app: app, type: .list)]
+        ]
         let useCase: MockSuccessSearchAppUseCase = MockSuccessSearchAppUseCase(app: app)
         var callCount: Int = 0
         sut = TodayViewModel(useCase: useCase)
@@ -69,14 +72,22 @@ final class MockSuccessSearchAppUseCase: SearchAppUseCase {
         self.app = app
     }
     
-    func searchApp(with id: Int, completion: @escaping (Result<App, DataTransferError>) -> Void) -> URLSessionTask? {
+    func searchApp(
+        with id: Int,
+        completion: @escaping (Result<App, DataTransferError>) -> Void
+    ) -> URLSessionTask? {
         searchAppCallCount += 1
         completion(.success(app))
         
         return nil
     }
     
-    func searchAppList(with keyword: String, page: Int, pageSize: Int, completion: @escaping (Result<AppsPage, DataTransferError>) -> Void) -> URLSessionTask? {
+    func searchAppList(
+        with keyword: String,
+        page: Int,
+        pageSize: Int,
+        completion: @escaping (Result<AppsPage, DataTransferError>) -> Void
+    ) -> URLSessionTask? {
         let appsPage: AppsPage = AppsPage(count: 1, searchResults: [app])
         searchAppListCallCount += 1
         completion(.success(appsPage))
