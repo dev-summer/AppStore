@@ -48,10 +48,10 @@ final class TodayViewController: UIViewController {
             snapshot.appendItems(apps[.list] ?? [], toSection: .list)
             self?.dataSource?.apply(snapshot, animatingDifferences: false)
         }
-        viewModel.largeSectionTapped = { [weak self] appID in
+        viewModel.showAppDetail = { [weak self] appID in
             self?.showAppDetail(with: appID)
         }
-        viewModel.listSectionTapped = { [weak self] keyword in
+        viewModel.showAppList = { [weak self] keyword in
             self?.showAppListWith(
                 keyword: keyword,
                 title: Namespace.sectionHeaderTitle,

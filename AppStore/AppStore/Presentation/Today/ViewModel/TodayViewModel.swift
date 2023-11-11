@@ -15,8 +15,8 @@ final class TodayViewModel {
     
     var appsDelivered: (([TodaySection: [TodayItem]]) -> Void)?
     var errorDelivered: ((String?) -> Void)?
-    var largeSectionTapped: ((App) -> Void)?
-    var listSectionTapped: ((String) -> Void)?
+    var showAppDetail: ((App) -> Void)?
+    var showAppList: ((String) -> Void)?
     private let useCase: SearchAppUseCase
     private var apps: [TodaySection: [TodayItem]] = [:] {
         didSet {
@@ -40,13 +40,13 @@ final class TodayViewModel {
             useCase.searchApp(with: item.appID) { [weak self] result in
                 switch result {
                 case .success(let app):
-                    self?.largeSectionTapped?(app)
+                    self?.showAppDetail?(app)
                 case .failure(let error):
                     self?.errorDelivered?(error.localizedDescription)
                 }
             }
         case .list:
-            listSectionTapped?(Query.exampleKeyword)
+            showAppList?(Query.exampleKeyword)
         }
     }
     
@@ -57,7 +57,7 @@ final class TodayViewModel {
                 let item = TodayItem(app: app, type: .large)
                 self?.apps[item.type]?.append(item)
             case .failure(let error):
-                self?.errorDelivered?(error.localizedDescription)
+                self?.errorDelivered?(error.errorDescription)
             }
         }
     }

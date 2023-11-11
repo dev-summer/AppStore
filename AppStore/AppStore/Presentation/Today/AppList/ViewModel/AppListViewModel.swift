@@ -13,7 +13,7 @@ final class AppListViewModel {
     
     let title: String
     let description: String
-    var cellTapped: ((App) -> Void)?
+    var showDetail: ((App) -> Void)?
     var appsDelivered: (([TodayItem]) -> Void)?
     var errorDelivered: ((String?) -> Void)?
     private let keyword: String
@@ -42,7 +42,7 @@ final class AppListViewModel {
         useCase.searchApp(with: item.appID) { [weak self] result in
             switch result {
             case .success(let app):
-                self?.cellTapped?(app)
+                self?.showDetail?(app)
             case .failure(let error):
                 self?.errorDelivered?(error.localizedDescription)
             }
