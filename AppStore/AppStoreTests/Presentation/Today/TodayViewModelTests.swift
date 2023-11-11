@@ -38,7 +38,7 @@ final class TodayViewModelTests: XCTestCase {
             .large: [TodayItem(app: app, type: .large)],
             .list: [TodayItem(app: app, type: .list)]
         ]
-        let useCase: MockSuccessSearchAppUseCase = MockSuccessSearchAppUseCase(app: app)
+        let useCase = MockSuccessSearchAppUseCase(app: app)
         var callCount: Int = 0
         sut = TodayViewModel(useCase: useCase)
         
@@ -51,7 +51,7 @@ final class TodayViewModelTests: XCTestCase {
             if callCount == 2 {
                 // then
                 XCTAssertEqual(output, expectedResult)
-                useCase.verify()
+                useCase.verify(searchAppCallCount: 1, searchAppListCallCount: 1)
                 expectation.fulfill()
             } else if callCount > 2 {
                 XCTFail()
@@ -61,42 +61,119 @@ final class TodayViewModelTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
-}
-
-final class MockSuccessSearchAppUseCase: SearchAppUseCase {
-    private var app: App
-    private var searchAppCallCount: Int = 0
-    private var searchAppListCallCount: Int = 0
     
-    init(app: App) {
-        self.app = app
-    }
-    
-    func searchApp(
-        with id: Int,
-        completion: @escaping (Result<App, DataTransferError>) -> Void
-    ) -> URLSessionTask? {
-        searchAppCallCount += 1
-        completion(.success(app))
+    func test_fetchAppsFailure() {
+        // given
+        let expectation = XCTestExpectation(description: "success")
+        let expectedResult = DataTransferError.decodingFailure.errorDescription
+        let useCase = MockFailureSearchAppUseCase(error: .decodingFailure)
+        var callCount: Int = 0
+        sut = TodayViewModel(useCase: useCase)
         
-        return nil
-    }
-    
-    func searchAppList(
-        with keyword: String,
-        page: Int,
-        pageSize: Int,
-        completion: @escaping (Result<AppsPage, DataTransferError>) -> Void
-    ) -> URLSessionTask? {
-        let appsPage: AppsPage = AppsPage(count: 1, searchResults: [app])
-        searchAppListCallCount += 1
-        completion(.success(appsPage))
+        // when
+        var output: String? = nil
+        sut.errorDelivered = { errorDescription in
+            output = errorDescription
+            callCount += 1
+            
+            if callCount == 2 {
+                // then
+                XCTAssertEqual(output, expectedResult)
+                useCase.verify(searchAppCallCount: 1, searchAppListCallCount: 1)
+                expectation.fulfill()
+            } else if callCount > 2 {
+                XCTFail()
+            }
+        }
+        sut.fetchApps()
         
-        return nil
+        wait(for: [expectation], timeout: 1)
     }
     
-    func verify() {
-        XCTAssertEqual(searchAppCallCount, 1)
-        XCTAssertEqual(searchAppListCallCount, 1)
+    func test_largeCellTapSuccess() {
+        // given
+        let expectation = XCTestExpectation(description: "success")
+        let expectedResult: App = app
+        let useCase = MockSuccessSearchAppUseCase(app: app)
+        var callCount: Int = 0
+        let item = TodayItem(app: app, type: .large)
+        sut = TodayViewModel(useCase: useCase)
+        
+        // when
+        var output: App? = nil
+        sut.showAppDetail = { app in
+            output = app
+            callCount += 1
+            
+            // then
+            if callCount == 1 {
+                XCTAssertEqual(output, expectedResult)
+                useCase.verify(searchAppCallCount: 1)
+                expectation.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        sut.didTapCellAt(section: item.type, with: item)
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func test_largeCellTapFailure() {
+        // given
+        let expectation = XCTestExpectation(description: "failure")
+        let expectedResult = DataTransferError.decodingFailure.errorDescription
+        let useCase = MockFailureSearchAppUseCase(error: .decodingFailure)
+        var callCount: Int = 0
+        let item = TodayItem(app: app, type: .large)
+        sut = TodayViewModel(useCase: useCase)
+        
+        // when
+        var output: String? = nil
+        sut.errorDelivered = { errorDescription in
+            output = errorDescription
+            callCount += 1
+            
+            // then
+            if callCount == 1 {
+                XCTAssertEqual(output, expectedResult)
+                useCase.verify(searchAppCallCount: 1)
+                expectation.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        sut.didTapCellAt(section: item.type, with: item)
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func test_listCellTapSuccess() {
+        // given
+        let expectation = XCTestExpectation(description: "success")
+        let expectedResult = "캘린더"
+        let useCase: MockSuccessSearchAppUseCase = MockSuccessSearchAppUseCase(app: app)
+        var callCount: Int = 0
+        let item = TodayItem(app: app, type: .list)
+        sut = TodayViewModel(useCase: useCase)
+        
+        // when
+        var output = ""
+        sut.showAppList = { keyword in
+            output = keyword
+            callCount += 1
+            
+            // then
+            if callCount == 1 {
+                XCTAssertEqual(output, expectedResult)
+                useCase.verify(searchAppListCallCount: 1)
+                expectation.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        sut.didTapCellAt(section: item.type, with: item)
+        
+        wait(for: [expectation], timeout: 1)
     }
 }
