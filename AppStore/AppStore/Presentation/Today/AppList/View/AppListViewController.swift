@@ -67,7 +67,7 @@ final class AppListViewController: UIViewController {
             snapshot.appendItems(items, toSection: .list)
             self?.dataSource?.apply(snapshot, animatingDifferences: false)
         }
-        viewModel.cellTapped = { [weak self] app in
+        viewModel.showDetail = { [weak self] app in
             self?.showAppDetail(with: app)
         }
         viewModel.errorDelivered = { [weak self] message in
